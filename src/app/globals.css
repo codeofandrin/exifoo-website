@@ -1,15 +1,41 @@
-@import url("https://fonts.googleapis.com/css?family=Inter:regular,bold,italic,black,medium,semibold,extrabold,thin,light");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    @apply scroll-smooth bg-zinc-950 px-5 text-zinc-100 xs:px-0;
-    font-family: Inter, Calibri, Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
-:root,
-body,
-#root {
-    @apply h-full w-full;
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+    @apply bg-white;
+    font-family: Poppins;
 }

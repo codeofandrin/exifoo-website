@@ -1,7 +1,13 @@
 import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {
-    /* config options here */
-}
+module.exports = {
+    webpack(config: NextConfig) {
+        config.module.rules.push({
+            test: /\.svg$/i,
+            issuer: /\.[jt]sx?$/,
+            use: ["@svgr/webpack"]
+        })
 
-export default nextConfig
+        return config
+    }
+}

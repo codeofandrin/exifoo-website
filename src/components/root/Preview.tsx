@@ -42,7 +42,7 @@ export default function Preview() {
       <div className="flex flex-col items-center text-center text-xl font-medium text-neutral-800">
         <p>Turn a choatic folder ...</p>
         <AnimatePresence>
-          {isToggleOn && (
+          {isToggleOn ? (
             <motion.p
               className="mt-2"
               initial={{ opacity: 0 }}
@@ -51,7 +51,10 @@ export default function Preview() {
               transition={{ duration: 0.5 }}>
               ... into a perfectly sorted photo collection
             </motion.p>
-          )}
+          ) :
+            // placeholder 
+            <p className="opacity-0 mt-2">... into a perfectly sorted photo collection</p>
+          }
         </AnimatePresence>
       </div>
     </div>

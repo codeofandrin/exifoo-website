@@ -1,27 +1,43 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
 import SVGMenu from "@/assets/icons/Menu.svg"
 
 const menuItems = [
-  { name: "Download", link: "/download" },
-  { name: "Features", link: "/#features" },
-  { name: "Changelog", link: "/changelog" },
-  { name: "Pricing", link: "/#pricing" }
+  { name: "Download", link: "/download", highlight: true },
+  { name: "Features", link: "/#features", highlight: false },
+  { name: "Changelog", link: "/changelog", highlight: true },
+  { name: "Pricing", link: "/#pricing", highlight: false }
 ]
 
-function MobileMenu() {
+interface MobileMenuPropsType {
+  currentPath: string
+  closeMenu: Function
+}
+
+function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
+  function handleCloseMenu() {
+    closeMenu()
+  }
+
   return (
     <div className="absolute w-full">
       <ul className="mt-4 flex flex-col rounded-lg bg-logo p-4 font-medium">
-        {menuItems.map(({ name, link }, i) => {
+        {menuItems.map(({ name, link, highlight }, i) => {
+          const currentHighlight = highlight && currentPath === link
+
           return (
             <li key={`menu-item-${name}`}>
-              <a href={link} className="block rounded-lg px-3 py-2 text-primary-50 hover:bg-black/20">
+              <Link
+                href={link}
+                className={`${currentHighlight && "text-primary-400"} block rounded-lg px-3 py-2 text-primary-50 hover:bg-black/20`}
+                onClick={handleCloseMenu}>
                 {name}
-              </a>
+              </Link>
             </li>
           )
         })}
@@ -32,6 +48,7 @@ function MobileMenu() {
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false)
+  const currentPath = usePathname()
 
   function handleToggleMenu() {
     setIsToggleOpen(!isToggleOpen)
@@ -47,7 +64,9 @@ export default function Navbar() {
           <SVGMenu className="w-7 text-logo" />
         </button>
       </div>
-      <div className="relative sm:hidden">{isToggleOpen && <MobileMenu />}</div>
+      <div className="relative sm:hidden">
+        {isToggleOpen && <MobileMenu currentPath={currentPath} closeMenu={() => setIsToggleOpen(false)} />}
+      </div>
     </div>
   )
 }

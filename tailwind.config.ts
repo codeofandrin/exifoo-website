@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme"
 const flowbite = require("flowbite-react/tailwind")
+
 import exifooTheme from "./theme"
 
 export default {
@@ -18,7 +19,8 @@ export default {
             marker: ["Permanent Marker"]
         },
         boxShadow: {
-            apple: "0px 9px 20px 0px rgba(0, 0, 0, 60%)"
+            apple: "0px 9px 20px 0px rgba(0, 0, 0, 60%)",
+            ...defaultTheme.boxShadow
         }
     },
     plugins: [flowbite.content()]

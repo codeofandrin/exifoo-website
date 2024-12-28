@@ -48,7 +48,7 @@ function CardTop({ version, price, description, theme }: CardTopPropsType) {
   return (
     <div>
       <h2 className={`${versionClasses} text-lg`}>{version}</h2>
-      <h1 className={`${priceClasses} mt-1 text-3xl`}>{price}</h1>
+      <h1 className={`${priceClasses} mt-1 text-4xl`}>{price}</h1>
       <div className={`${descClasses} mt-4 text-sm`}>{description}</div>
       <div className={`${dividerClasses} mb-8 mt-7 h-px`} />
     </div>

@@ -16,6 +16,9 @@ export default {
         fontFamily: {
             logo: ["Space Grotesk"],
             marker: ["Permanent Marker"]
+        },
+        boxShadow: {
+            apple: "0px 9px 20px 0px rgba(0, 0, 0, 60%)"
         }
     },
     plugins: [flowbite.content()]

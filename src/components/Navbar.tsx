@@ -55,7 +55,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-7">
       <div className="flex items-center justify-between pt-10">
         <a href="/">
           <img src={ImgLogoLarge.src} alt="exifoo Logo" className="w-40" />

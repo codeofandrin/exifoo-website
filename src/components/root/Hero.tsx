@@ -5,7 +5,7 @@ import ImgAppPreview from "@/assets/images/app_preview_hero.png"
 
 export default function Hero() {
   return (
-    <div className="mt-14">
+    <div className="mt-14 px-7">
       {/* Heading */}
       <div className="flex flex-col text-4xl font-bold text-neutral-800">
         <p>Shoot more.</p>

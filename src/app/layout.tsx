@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="px-7">
+    <html lang="en">
       <body>
         <Navbar />
         {children}

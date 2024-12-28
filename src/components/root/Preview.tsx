@@ -13,7 +13,7 @@ export default function Preview() {
   const [isToggleOn, setIsToggleOn] = useState(false)
 
   return (
-    <div className="mt-32 flex flex-col items-center">
+    <div className="mt-32 flex flex-col items-center px-7">
       {/* Toggle Switch */}
       <div className="relative w-full">
         <div className="flex flex-col items-center">
@@ -51,10 +51,10 @@ export default function Preview() {
               transition={{ duration: 0.5 }}>
               ... into a perfectly sorted photo collection
             </motion.p>
-          ) :
-            // placeholder 
-            <p className="opacity-0 mt-2">... into a perfectly sorted photo collection</p>
-          }
+          ) : (
+            // placeholder
+            <p className="mt-2 opacity-0">... into a perfectly sorted photo collection</p>
+          )}
         </AnimatePresence>
       </div>
     </div>

@@ -2,7 +2,6 @@ import Image from "next/image"
 
 import CTAButton from "../common/CTAButton"
 import ImgAppPreview from "@/assets/images/app_preview_hero.png"
-import "@/styles/root/Hero.css"
 
 export default function Hero() {
   return (
@@ -21,7 +20,7 @@ export default function Hero() {
       </div>
       {/* CTA */}
       <div className="mt-8">
-        <CTAButton id="btn-hero-cta" />
+        <CTAButton>Download for free</CTAButton>
       </div>
       {/* Preview */}
       <div className="mt-10">

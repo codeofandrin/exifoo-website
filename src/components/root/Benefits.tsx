@@ -127,7 +127,7 @@ export default function Benefits() {
         {/* Simple */}
         <Card className="bg-gradient-to-t from-white to-accent-100">
           <CardIcon>
-            <SVGCheck className="w-8 fill-white" />
+            <SVGCheck className="w-8 text-white" />
           </CardIcon>
           <CardTitle>Simple and Modern.</CardTitle>
           <CardDescription>

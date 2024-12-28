@@ -1,0 +1,7 @@
+#btn-hero-cta {
+    box-shadow:
+        inset 0px 1px 0px 0px rgba(255, 255, 255, 40%),
+        inset 0px -1px 0px 0px rgba(0, 0, 0, 40%),
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+}

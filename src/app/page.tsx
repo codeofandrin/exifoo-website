@@ -3,6 +3,7 @@ import Preview from "@/components/root/Preview"
 import Features from "@/components/root/Features"
 import Benefits from "@/components/root/Benefits"
 import Pricing from "@/components/root/Pricing"
+import Testimonials from "@/components/root/Testimonials"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Features />
       <Benefits />
       <Pricing />
+      <Testimonials />
     </div>
   )
 }

@@ -125,7 +125,7 @@ export default function Pricing() {
   demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 bg-neutral-100 px-7 py-28">
+    <div className="mt-52 bg-neutral-100 px-7 pb-40 pt-28">
       {/* Header */}
       <h1 className="text-center text-3xl font-semibold text-neutral-800">
         <p>Pay once</p>

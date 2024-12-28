@@ -3,7 +3,7 @@ import Image from "next/image"
 import CTAButton from "../common/CTAButton"
 import ImgAppPreview from "@/assets/images/app_preview_hero.png"
 
-export function Hero() {
+export default function Hero() {
   return (
     <div className="mt-14">
       {/* Heading */}

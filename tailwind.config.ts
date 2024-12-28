@@ -18,5 +18,5 @@ export default {
             marker: ["Permanent Marker"]
         }
     },
-    plugins: [flowbite.content(), require("tailwindcss-motion")]
+    plugins: [flowbite.content()]
 } satisfies Config

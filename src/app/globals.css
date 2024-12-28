@@ -35,6 +35,11 @@
     src: url("../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Permanent Marker";
+    src: url("../assets/fonts/PermanentMarker-Regular.ttf") format("truetype");
+}
+
 :root {
     @apply bg-white;
     font-family: Poppins;

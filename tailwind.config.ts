@@ -12,7 +12,11 @@ export default {
         screens: {
             xs: "360px",
             ...defaultTheme.screens
+        },
+        fontFamily: {
+            logo: ["Space Grotesk"],
+            marker: ["Permanent Marker"]
         }
     },
-    plugins: [flowbite.content()]
+    plugins: [flowbite.content(), require("tailwindcss-motion")]
 } satisfies Config

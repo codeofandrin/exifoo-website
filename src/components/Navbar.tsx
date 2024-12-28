@@ -30,7 +30,7 @@ function MobileMenu() {
   )
 }
 
-export default function Header() {
+export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false)
 
   function handleToggleMenu() {

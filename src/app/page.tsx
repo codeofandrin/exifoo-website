@@ -8,7 +8,7 @@ import CTA from "@/components/root/CTA"
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center sm:overflow-x-hidden">
       <Hero />
       <Preview />
       <Features />

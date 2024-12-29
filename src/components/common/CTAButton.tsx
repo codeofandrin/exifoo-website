@@ -10,7 +10,7 @@ export default function CTAButton({ children, ...props }: CTAButtonPropsType) {
   return (
     <button
       {...props}
-      className={`${props.className} btn-cta group relative w-full overflow-hidden rounded-full bg-gradient-to-t from-primary-600 to-primary-500 px-7 py-3.5 transition`}>
+      className={`${props.className} btn-cta group relative overflow-hidden rounded-full bg-gradient-to-t from-primary-600 to-primary-500 px-7 py-3.5 transition`}>
       <div className="flex items-center justify-center">
         <p className="font-bold text-white">{children}</p>
         <SVGArrowRight className="ml-2 w-6 text-white transition-[transform] duration-300 group-hover:translate-x-2" />

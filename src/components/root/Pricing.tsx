@@ -101,7 +101,7 @@ interface CardButtonPropsType {
 function CardButton({ theme }: CardButtonPropsType) {
   let btn = <></>
   if (theme === "primary") {
-    btn = <CTAButton className="text-sm">Get a license</CTAButton>
+    btn = <CTAButton className="w-full text-sm">Get a license</CTAButton>
   } else if (theme === "accent") {
     btn = (
       <Button className="w-full rounded-full bg-transparent" color="silent" size="lg">
@@ -125,7 +125,7 @@ export default function Pricing() {
   demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 bg-neutral-100 px-7 pb-40 pt-28">
+    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28">
       {/* Header */}
       <h1 id="pricing" className="scroll-mt-20 text-center text-3xl font-semibold text-neutral-800">
         <p>Pay once</p>

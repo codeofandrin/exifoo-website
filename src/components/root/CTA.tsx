@@ -30,7 +30,7 @@ export default function CTA() {
         </div>
         {/* Button */}
         <div className="mt-16 w-full">
-          <CTAButton>Download for free</CTAButton>
+          <CTAButton className="w-full">Download for free</CTAButton>
         </div>
       </div>
       <Background />

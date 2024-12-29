@@ -72,7 +72,7 @@ export default function Navbar() {
               <Link
                 key={`menu-item-${name}`}
                 href={link}
-                className={`${currentHighlight ? "text-primary-400" : "text-logo"}`}>
+                className={`${currentHighlight ? "text-primary-400" : "text-logo"} hover:opacity-60 transition-[opacity] duration-200`}>
                 {name}
               </Link>
             )

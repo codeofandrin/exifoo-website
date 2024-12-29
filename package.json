@@ -18,7 +18,6 @@
     "bump:dev": "npm version $npm_config_vers --git-tag-version false && git commit -a -m 'Bump version to development'"
   },
   "dependencies": {
-    "@studio-freight/react-lenis": "^0.0.47",
     "flowbite-react": "^0.10.2",
     "framer-motion": "^11.15.0",
     "next": "15.0.3",

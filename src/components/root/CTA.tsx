@@ -24,7 +24,7 @@ export default function CTA() {
     <div className="relative mt-20 overflow-hidden">
       <div className="flex flex-col items-center justify-center px-7 py-20">
         {/* Text */}
-        <div id="cta-text" className="text-center text-4xl font-bold">
+        <div id="cta-text" className="text-center text-4xl font-bold font-logo tracking-tight">
           <p>Ready?</p>
           <p>Start organizing today!</p>
         </div>

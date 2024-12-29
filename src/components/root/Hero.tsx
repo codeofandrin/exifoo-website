@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="sm:flex">
         <div className="sm:w-1/2">
           {/* Heading */}
-          <div className="flex flex-col text-4xl font-bold text-neutral-800 sm:text-6xl">
+          <div className="flex flex-col text-4xl font-bold font-logo tracking-tight text-neutral-800 sm:text-6xl">
             <p>Shoot more.</p>
             <p className="text-accent-500">Organize less.</p>
           </div>

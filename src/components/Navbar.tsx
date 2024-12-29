@@ -34,7 +34,7 @@ function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
             <li key={`menu-item-${name}`}>
               <Link
                 href={link}
-                className={`${currentHighlight && "text-primary-400"} block rounded-lg px-3 py-2 text-primary-50 hover:bg-black/20`}
+                className={`${currentHighlight ? "text-primary-400" : "text-primary-50"} block rounded-lg px-3 py-2 hover:bg-black/20`}
                 onClick={handleCloseMenu}>
                 {name}
               </Link>

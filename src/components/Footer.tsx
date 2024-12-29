@@ -33,7 +33,9 @@ export default function Footer() {
     <div className="mt-40 px-7 pb-20">
       <div className="flex flex-col">
         {/* Logo */}
-        <Image src={ImgLogoLarge} alt={ImgLogoLarge.src} className="h-12 w-fit" />
+        <Link href="/">
+          <Image src={ImgLogoLarge} alt={ImgLogoLarge.src} className="h-12 w-fit" />
+        </Link>
         {/* Copyright */}
         <div className="mt-5 text-sm text-neutral-400">
           <p>Copyright © 2024 exifoo</p>

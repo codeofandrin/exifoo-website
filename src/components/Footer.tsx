@@ -30,7 +30,7 @@ function Links({ title, items, first = false }: LinksPropsType) {
 
 export default function Footer() {
   return (
-    <div className="mt-40 px-7 pb-20">
+    <div className="mt-40 w-full px-7 pb-20">
       <div className="flex flex-col">
         {/* Logo */}
         <Link href="/" className="group">

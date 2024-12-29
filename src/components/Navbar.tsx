@@ -56,7 +56,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="flex flex-col px-7">
+    <div className="flex w-full flex-col px-7 sm:max-w-screen-xl">
       <div className="flex items-center justify-between pt-10">
         <Link href="/" className="group">
           <img
@@ -65,10 +65,25 @@ export default function Navbar() {
             className="w-40 transition-[opacity] duration-200 group-hover:opacity-70"
           />
         </Link>
+        <div className="hidden space-x-8 sm:block">
+          {menuItems.map(({ name, link, highlight }, i) => {
+            const currentHighlight = highlight && currentPath === link
+            return (
+              <Link
+                key={`menu-item-${name}`}
+                href={link}
+                className={`${currentHighlight ? "text-primary-400" : "text-logo"}`}>
+                {name}
+              </Link>
+            )
+          })}
+        </div>
+        {/* Mobile Menu Button */}
         <button className="sm:hidden" onClick={handleToggleMenu}>
           {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
         </button>
       </div>
+      {/* Mobile Menu */}
       <div className="relative sm:hidden">
         {isToggleOpen && <MobileMenu currentPath={currentPath} closeMenu={() => setIsToggleOpen(false)} />}
       </div>

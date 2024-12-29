@@ -127,7 +127,7 @@ export default function Pricing() {
   return (
     <div className="mt-52 bg-neutral-100 px-7 pb-40 pt-28">
       {/* Header */}
-      <h1 className="text-center text-3xl font-semibold text-neutral-800">
+      <h1 id="pricing" className="scroll-mt-20 text-center text-3xl font-semibold text-neutral-800">
         <p>Pay once</p>
         <p className="font-bold text-accent-500">Use forever.</p>
       </h1>

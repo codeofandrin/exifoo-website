@@ -58,9 +58,9 @@ export default function Navbar() {
   return (
     <div className="flex flex-col px-7">
       <div className="flex items-center justify-between pt-10">
-        <a href="/">
+        <Link href="/">
           <img src={ImgLogoLarge.src} alt="exifoo Logo" className="w-40" />
-        </a>
+        </Link>
         <button className="sm:hidden" onClick={handleToggleMenu}>
           {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
         </button>

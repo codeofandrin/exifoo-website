@@ -62,7 +62,7 @@ export default function Navbar() {
           <img
             src={ImgLogoLarge.src}
             alt="exifoo Logo"
-            className="w-40 transition-[opacity] duration-200 group-hover:opacity-70"
+            className="w-40 transition-[opacity] duration-200 group-hover:opacity-60"
           />
         </Link>
         <div className="hidden space-x-8 sm:block">

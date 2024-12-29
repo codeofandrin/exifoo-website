@@ -13,9 +13,16 @@ export default function Preview() {
   const [isToggleOn, setIsToggleOn] = useState(false)
 
   return (
-    <div className="mt-32 flex flex-col items-center px-7">
+    <div className="mt-28 flex flex-col items-center px-7">
+      {/* CTA */}
+      <div className="flex w-full justify-center">
+        <div className="ml-32 flex flex-col">
+          <p className="ml-3 font-marker text-xl text-neutral-800">TRY IT OUT</p>
+          <Image src={ImgArrowMarker} alt="arrow marker" className="mt-2 w-10 -rotate-[160deg]" />
+        </div>
+      </div>
       {/* Toggle Switch */}
-      <div className="relative w-full">
+      <div className="relative mt-8 w-full">
         <div className="flex flex-col items-center">
           <p className="text-neutral-700">
             Turn on <span className="font-logo text-lg font-bold text-logo">exifoo</span>
@@ -23,11 +30,6 @@ export default function Preview() {
           <div className="mt-2">
             <ToggleSwitch handleToggle={() => setIsToggleOn(!isToggleOn)} />
           </div>
-        </div>
-        {/* CTA */}
-        <div className="absolute bottom-0 right-0 mb-2 flex">
-          <Image src={ImgArrowMarker} alt="arrow marker" className="w-6 -rotate-[100deg]" />
-          <p className="ml-2 font-marker text-xs text-neutral-800">TRY IT OUT</p>
         </div>
       </div>
       {/* Images */}

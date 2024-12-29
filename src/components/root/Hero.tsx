@@ -12,14 +12,14 @@ export default function Hero() {
         <p className="text-accent-500">Organize less.</p>
       </div>
       {/* Description */}
-      <div className="mt-5">
-        <p className="text-neutral-600">
-          Get rid of the headaches caused by unorganized photos. Simply add the date and time from the
-          EXIF-data to filenames to keep your photos organized.
+      <div className="mt-6">
+        <p className="text-neutral-500">
+          <span className="font-logo font-medium text-logo">exifoo</span> helps you keep your photos organized
+          by adding the date and time of capture to the filename.
         </p>
       </div>
       {/* CTA */}
-      <div className="mt-8">
+      <div className="mt-10">
         <CTAButton>Download for free</CTAButton>
       </div>
       {/* Preview */}

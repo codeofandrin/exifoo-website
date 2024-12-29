@@ -33,8 +33,12 @@ export default function Footer() {
     <div className="mt-40 px-7 pb-20">
       <div className="flex flex-col">
         {/* Logo */}
-        <Link href="/">
-          <Image src={ImgLogoLarge} alt={ImgLogoLarge.src} className="h-12 w-fit" />
+        <Link href="/" className="group">
+          <Image
+            src={ImgLogoLarge}
+            alt={ImgLogoLarge.src}
+            className="h-12 w-fit transition-[opacity] duration-200 group-hover:opacity-70"
+          />
         </Link>
         {/* Copyright */}
         <div className="mt-5 text-sm text-neutral-400">

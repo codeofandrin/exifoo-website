@@ -58,8 +58,12 @@ export default function Navbar() {
   return (
     <div className="flex flex-col px-7">
       <div className="flex items-center justify-between pt-10">
-        <Link href="/">
-          <img src={ImgLogoLarge.src} alt="exifoo Logo" className="w-40" />
+        <Link href="/" className="group">
+          <img
+            src={ImgLogoLarge.src}
+            alt="exifoo Logo"
+            className="w-40 transition-[opacity] duration-200 group-hover:opacity-70"
+          />
         </Link>
         <button className="sm:hidden" onClick={handleToggleMenu}>
           {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}

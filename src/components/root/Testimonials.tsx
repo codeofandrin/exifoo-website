@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useRef } from "react"
-import type { StaticImageData } from "next/image"
 
 import SVGStar from "@/assets/icons/Star.svg"
 

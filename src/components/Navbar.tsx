@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 
@@ -28,7 +28,7 @@ function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
   return (
     <div className="absolute w-full">
       <ul className="mt-4 flex flex-col rounded-lg bg-logo p-4 font-medium">
-        {menuItems.map(({ name, link, highlight }, i) => {
+        {menuItems.map(({ name, link, highlight }) => {
           const currentHighlight = highlight && currentPath === link
 
           return (
@@ -66,7 +66,7 @@ export default function Navbar() {
           />
         </Link>
         <div className="hidden space-x-8 sm:block">
-          {menuItems.map(({ name, link, highlight }, i) => {
+          {menuItems.map(({ name, link, highlight }) => {
             const currentHighlight = highlight && currentPath === link
             return (
               <Link

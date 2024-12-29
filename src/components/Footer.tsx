@@ -7,10 +7,9 @@ import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
 interface LinksPropsType {
   title: string
   items: { text: string; link: string }[]
-  first?: boolean
 }
 
-function Links({ title, items, first = false }: LinksPropsType) {
+function Links({ title, items }: LinksPropsType) {
   return (
     <div>
       <h1 className="font-semibold text-neutral-700">{title}</h1>

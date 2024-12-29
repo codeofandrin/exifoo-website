@@ -6,6 +6,7 @@ import Link from "next/link"
 
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
 import SVGMenu from "@/assets/icons/Menu.svg"
+import SVGX from "@/assets/icons/X.svg"
 
 const menuItems = [
   { name: "Download", link: "/download", highlight: true },
@@ -61,7 +62,7 @@ export default function Navbar() {
           <img src={ImgLogoLarge.src} alt="exifoo Logo" className="w-40" />
         </a>
         <button className="sm:hidden" onClick={handleToggleMenu}>
-          <SVGMenu className="w-7 text-logo" />
+          {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
         </button>
       </div>
       <div className="relative sm:hidden">

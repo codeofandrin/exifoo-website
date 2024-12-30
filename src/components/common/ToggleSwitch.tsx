@@ -13,7 +13,7 @@ export default function ToggleSwitch({
   switch (size) {
     case "lg":
       inputClasses =
-        "relative w-14 h-7 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-accent-500 transition-colors duration-100"
+        "relative w-[52px] h-7 bg-neutral-200 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-accent-500 transition-colors duration-100"
       break
     case "sm":
       inputClasses =

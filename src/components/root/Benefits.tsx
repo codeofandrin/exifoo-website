@@ -68,7 +68,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         whileHover={{ scale: 1.01 }}
-        transition={{ duration: 0.5, delay: 0, type: "spring" }}
+        transition={{ type: "spring", bounce: 0.6 }}
         className={`${className} relative hidden w-[420px] overflow-hidden rounded-3xl border border-accent-800 p-10 transition-shadow duration-200 sm:block sm:hover:shadow-xl`}>
         <div
           className="pointer-events-none absolute -inset-px -z-50 opacity-0 transition duration-300"

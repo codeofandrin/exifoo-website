@@ -17,7 +17,7 @@ function Card({ children, theme, first = false }: CardPropsType) {
     cardClasses = "bg-neutral-800 shadow-apple"
     card = (
       <div
-        className={`${cardClasses} ${!first && "mt-14 md:ml-16 md:mt-0 lg:ml-24"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
+        className={`${cardClasses} ${!first && "mt-14 md:ml-14 md:mt-0 lg:ml-24"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
         <div className="absolute inset-0 bg-[radial-gradient(70%_200px_at_50%_0%,theme(backgroundColor.white/10%),transparent)]" />
         {children}
       </div>
@@ -142,58 +142,58 @@ export default function Pricing() {
   demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">
-      {/* Header */}
-      <h1
-        id="pricing"
-        className="scroll-mt-20 text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
-        <p className="flex flex-col sm:block">
-          Pay once. <span className="font-bold text-accent-500">Use forever.</span>
+    <div className="mt-52 flex w-full flex-col items-center bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">
+      <div id="pricing" className="w-full scroll-mt-20 sm:max-w-screen-xl">
+        {/* Header */}
+        <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
+          <p className="flex flex-col sm:block">
+            Pay once. <span className="font-bold text-accent-500">Use forever.</span>
+          </p>
+        </h1>
+        {/* Description */}
+        <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
+          <span className="font-logo font-bold text-logo">exifoo</span> is a one-time purchase with no
+          recurring fees. You can try it out for free, with the demo version.
         </p>
-      </h1>
-      {/* Description */}
-      <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
-        <span className="font-logo font-bold text-logo">exifoo</span> is a one-time purchase with no recurring
-        fees. You can try it out for free, with the demo version.
-      </p>
-      {/* Cards */}
-      <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
-        {/* Demo */}
-        <Card theme="accent" first>
-          <CardTop
-            theme="accent"
-            version="Demo Version"
-            price="$0"
-            description={
-              <>
-                <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
-                limited features
-              </>
-            }
-          />
-          <CardFeatures theme="accent" features={demoFeatures} />
-          <CardButton theme="accent" />
-        </Card>
-        {/* License */}
-        <Card theme="primary">
-          <CardTop
-            theme="primary"
-            version="Full Version"
-            price={
-              <>
-                $19 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
-              </>
-            }
-            description={
-              <>
-                <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
-                all features
-              </>
-            }
-          />
-          <CardFeatures theme="primary" features={licenseFeatures} />
-          <CardButton theme="primary" />
-        </Card>
+        {/* Cards */}
+        <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
+          {/* Demo */}
+          <Card theme="accent" first>
+            <CardTop
+              theme="accent"
+              version="Demo Version"
+              price="$0"
+              description={
+                <>
+                  <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
+                  limited features
+                </>
+              }
+            />
+            <CardFeatures theme="accent" features={demoFeatures} />
+            <CardButton theme="accent" />
+          </Card>
+          {/* License */}
+          <Card theme="primary">
+            <CardTop
+              theme="primary"
+              version="Full Version"
+              price={
+                <>
+                  $19 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
+                </>
+              }
+              description={
+                <>
+                  <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
+                  all features
+                </>
+              }
+            />
+            <CardFeatures theme="primary" features={licenseFeatures} />
+            <CardButton theme="primary" />
+          </Card>
+        </div>
       </div>
     </div>
   )

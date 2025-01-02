@@ -129,61 +129,66 @@ function CardAuthor({ imgClass, name, profession }: CardAuthorPropsType) {
 export default function Testimonials() {
   return (
     <div className="mt-40 px-7 pb-40 md:px-10 lg:px-20">
-      {/* Header */}
-      <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">What our users say</h1>
-      {/* Description */}
-      <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
-        Read how <span className="font-logo font-bold text-logo">exifoo</span> has made organizing photos
-        easier for people just like you.
-      </p>
-      {/* Cards */}
-      <div className="mt-16 sm:mt-28 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-10 lg:flex-nowrap">
-        {/* Author 1 */}
-        <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
-          <CardReview>
-            <>
-              I can't recommend <span className="font-logo font-medium text-logo">exifoo</span> enough! It's
-              been a game changer for organizing my photos, making them easy to recognize. I also appreciate
-              its commitment to privacy, it keeps my photos organized and my data safe.
-            </>
-          </CardReview>
-          <CardAuthor
-            imgClass="bg-[url('../assets/images/testimonial_author_1.jpg')]"
-            name="James Carter"
-            profession="Artist"
-          />
-        </Card>
-        {/* Author 2 */}
-        <Card className="bg-accent-100 sm:bg-transparent">
-          <CardReview>
-            <>
-              I spent hours sorting through my photos, struggling to remember when and where they were taken.
-              It was exhausting. But with <span className="font-logo font-medium text-logo">exifoo</span>,
-              everything is so much easier. And the best thing about it is that I only had to pay once.
-            </>
-          </CardReview>
-          <CardAuthor
-            imgClass="bg-[url('../assets/images/testimonial_author_2.jpg')]"
-            name="Sophie Martin"
-            profession="Traveller"
-          />
-        </Card>
-        {/* Author 3 */}
-        <Card className="bg-gradient-to-t from-white to-accent-100 sm:bg-none">
-          <CardReview>
-            <>
-              I love how easy <span className="font-logo font-medium text-logo">exifoo</span> is to use.
-              There's no sign-up needed, so I could get started right away. The interface is super simple and
-              makes renaming photos so easy. It's the perfect tool for anyone seeking a quick and easy
-              solution!
-            </>
-          </CardReview>
-          <CardAuthor
-            imgClass="bg-[url('../assets/images/testimonial_author_3.jpg')]"
-            name="Claudia Fischer"
-            profession="Photographer"
-          />
-        </Card>
+      <div className="sm:max-w-screen-xl">
+        {/* Header */}
+        <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
+          What our users say
+        </h1>
+        {/* Description */}
+        <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
+          Read how <span className="font-logo font-bold text-logo">exifoo</span> has made organizing photos
+          easier for people just like you.
+        </p>
+        {/* Cards */}
+        <div className="mt-16 sm:mt-28 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-10 lg:flex-nowrap">
+          {/* Author 1 */}
+          <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
+            <CardReview>
+              <>
+                I can't recommend <span className="font-logo font-medium text-logo">exifoo</span> enough! It's
+                been a game changer for organizing my photos, making them easy to recognize. I also appreciate
+                its commitment to privacy, it keeps my photos organized and my data safe.
+              </>
+            </CardReview>
+            <CardAuthor
+              imgClass="bg-[url('../assets/images/testimonial_author_1.jpg')]"
+              name="James Carter"
+              profession="Artist"
+            />
+          </Card>
+          {/* Author 2 */}
+          <Card className="bg-accent-100 sm:bg-transparent">
+            <CardReview>
+              <>
+                I spent hours sorting through my photos, struggling to remember when and where they were
+                taken. It was exhausting. But with{" "}
+                <span className="font-logo font-medium text-logo">exifoo</span>, everything is so much easier.
+                And the best thing about it is that I only had to pay once.
+              </>
+            </CardReview>
+            <CardAuthor
+              imgClass="bg-[url('../assets/images/testimonial_author_2.jpg')]"
+              name="Sophie Martin"
+              profession="Traveller"
+            />
+          </Card>
+          {/* Author 3 */}
+          <Card className="bg-gradient-to-t from-white to-accent-100 sm:bg-none">
+            <CardReview>
+              <>
+                I love how easy <span className="font-logo font-medium text-logo">exifoo</span> is to use.
+                There's no sign-up needed, so I could get started right away. The interface is super simple
+                and makes renaming photos so easy. It's the perfect tool for anyone seeking a quick and easy
+                solution!
+              </>
+            </CardReview>
+            <CardAuthor
+              imgClass="bg-[url('../assets/images/testimonial_author_3.jpg')]"
+              name="Claudia Fischer"
+              profession="Photographer"
+            />
+          </Card>
+        </div>
       </div>
     </div>
   )

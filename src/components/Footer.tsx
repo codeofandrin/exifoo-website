@@ -29,7 +29,7 @@ function Links({ title, items }: LinksPropsType) {
 
 export default function Footer() {
   return (
-    <div className="mt-40 w-full px-7 pb-20">
+    <div className="mt-40 flex w-full flex-col px-7 pb-20 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex w-fit flex-col">
         {/* Logo */}
         <Link href="/" className="group">

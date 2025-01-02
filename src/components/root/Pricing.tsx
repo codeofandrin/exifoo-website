@@ -12,13 +12,27 @@ interface CardPropsType {
 
 function Card({ children, theme, first = false }: CardPropsType) {
   let cardClasses = ""
+  let card
   if (theme === "primary") {
     cardClasses = "bg-neutral-800 shadow-apple"
+    card = (
+      <div
+        className={`${cardClasses} ${!first && "mt-14 md:ml-16 md:mt-0 lg:ml-24"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
+        <div className="absolute inset-0 bg-[radial-gradient(70%_200px_at_50%_0%,theme(backgroundColor.white/10%),transparent)]" />
+        {children}
+      </div>
+    )
   } else if (theme === "accent") {
     cardClasses = "border border-neutral-400"
+    card = (
+      <div
+        className={`${cardClasses} ${!first && "mt-14 sm:ml-28 sm:mt-0"} w-full rounded-2xl p-8 sm:max-w-md`}>
+        {children}
+      </div>
+    )
   }
 
-  return <div className={`${cardClasses} ${!first && "mt-14"} rounded-2xl p-8`}>{children}</div>
+  return card
 }
 
 interface CardTopPropsType {
@@ -47,10 +61,10 @@ function CardTop({ version, price, description, theme }: CardTopPropsType) {
 
   return (
     <div>
-      <h2 className={`${versionClasses} text-lg`}>{version}</h2>
-      <h1 className={`${priceClasses} mt-1 text-4xl`}>{price}</h1>
-      <div className={`${descClasses} mt-4 text-sm`}>{description}</div>
-      <div className={`${dividerClasses} mb-8 mt-7 h-px`} />
+      <h2 className={`${versionClasses} sm:text-lg`}>{version}</h2>
+      <h1 className={`${priceClasses} mt-3 text-4xl sm:mt-5 sm:text-5xl`}>{price}</h1>
+      <div className={`${descClasses} mt-4 text-sm sm:mt-6 sm:text-base`}>{description}</div>
+      <div className={`${dividerClasses} mb-8 mt-7 h-px sm:mb-10 sm:mt-9`} />
     </div>
   )
 }
@@ -86,7 +100,7 @@ function CardFeatures({ theme, features }: CardFeaturesPropsType) {
                 <SVGX className="h-3 w-3 stroke-[3] text-white" />
               )}
             </div>
-            <p className={`${textColor} ml-3 text-sm`}>{text}</p>
+            <p className={`${textColor} ml-3 text-sm sm:text-base`}>{text}</p>
           </div>
         )
       })}
@@ -101,11 +115,14 @@ interface CardButtonPropsType {
 function CardButton({ theme }: CardButtonPropsType) {
   let btn = <></>
   if (theme === "primary") {
-    btn = <CTAButton className="w-full text-sm">Get a license</CTAButton>
+    btn = <CTAButton className="w-full text-sm sm:text-base">Get a license</CTAButton>
   } else if (theme === "accent") {
     btn = (
-      <Button className="w-full rounded-full bg-transparent" color="silent" size="lg">
-        <p className="text-sm">Start for free</p>
+      <Button
+        className="w-full rounded-full border-neutral-400 bg-transparent hover:bg-neutral-200"
+        color="silent"
+        size="2xl">
+        <p className="text-sm sm:text-base">Start for free</p>
       </Button>
     )
   }
@@ -125,19 +142,22 @@ export default function Pricing() {
   demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28">
+    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28 sm:pb-52 sm:pt-36">
       {/* Header */}
-      <h1 id="pricing" className="scroll-mt-20 text-center text-3xl font-semibold text-neutral-800">
-        <p>Pay once</p>
-        <p className="font-bold text-accent-500">Use forever.</p>
+      <h1
+        id="pricing"
+        className="scroll-mt-20 text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
+        <p className="flex flex-col sm:block">
+          Pay once. <span className="font-bold text-accent-500">Use forever.</span>
+        </p>
       </h1>
       {/* Description */}
-      <p className="mt-3 text-center text-neutral-600">
+      <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
         <span className="font-logo font-bold text-logo">exifoo</span> is a one-time purchase with no recurring
         fees. You can try it out for free, with the demo version.
       </p>
       {/* Cards */}
-      <div className="mt-16">
+      <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
         {/* Demo */}
         <Card theme="accent" first>
           <CardTop
@@ -146,8 +166,8 @@ export default function Pricing() {
             price="$0"
             description={
               <>
-                <span className="font-logo text-base font-medium">exifoo</span> desktop app with limited
-                features
+                <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
+                limited features
               </>
             }
           />
@@ -161,12 +181,13 @@ export default function Pricing() {
             version="Full Version"
             price={
               <>
-                $19 <span className="font-base ml-1 text-xs font-normal">/lifetime</span>
+                $19 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
               </>
             }
             description={
               <>
-                <span className="font-logo text-base font-medium">exifoo</span> desktop app with all features
+                <span className="font-logo text-base font-medium sm:text-lg">exifoo</span> desktop app with
+                all features
               </>
             }
           />

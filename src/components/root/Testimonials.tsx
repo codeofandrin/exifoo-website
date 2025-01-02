@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
+import { motion } from "framer-motion"
 
 import SVGStar from "@/assets/icons/Star.svg"
 
@@ -44,22 +45,38 @@ function Card({ className, first = false, children }: CardPropsType) {
   }
 
   return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={`${className} ${!first && "mt-16"} relative overflow-hidden rounded-xl border border-accent-800 p-6 shadow-xl`}>
+    <div>
+      {/* Mobile card */}
       <div
-        className="pointer-events-none absolute -inset-px -z-50 hidden opacity-0 transition duration-300"
-        style={{
-          opacity,
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(207,247,254,1), transparent 50%)`
-        }}
-      />
-      <div>{children}</div>
+        ref={divRef}
+        onMouseMove={handleMouseMove}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={`${className} ${!first && "mt-16"} relative w-full overflow-hidden rounded-xl border border-accent-800 p-6 shadow-xl sm:hidden`}>
+        {children}
+      </div>
+      {/* Desktop Card */}
+      <motion.div
+        ref={divRef}
+        onMouseMove={handleMouseMove}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ scale: 1.01 }}
+        transition={{ type: "spring", bounce: 0.6 }}
+        className={`${className} relative hidden min-h-[22rem] max-w-sm overflow-hidden rounded-xl border border-accent-800 p-8 transition-shadow duration-200 sm:flex sm:hover:shadow-xl`}>
+        <div
+          className="pointer-events-none absolute -inset-px -z-50 opacity-0 transition duration-300"
+          style={{
+            opacity,
+            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(207,247,254,1), transparent 50%)`
+          }}
+        />
+        <div className="flex flex-col justify-between">{children}</div>
+      </motion.div>
     </div>
   )
 }
@@ -98,9 +115,7 @@ function CardAuthor({ imgClass, name, profession }: CardAuthorPropsType) {
   return (
     <div className="mt-7 flex items-center">
       {/* Portrait */}
-      <div className={`${imgClass} h-12 w-12 rounded-full bg-cover bg-center`}>
-        {/* <Image src={img} alt={img.src} className="w-24 bg-auto" /> */}
-      </div>
+      <div className={`${imgClass} h-12 w-12 rounded-full bg-cover bg-center`}></div>
       {/* Text */}
       <div className="ml-3 flex flex-col">
         <p className="font-semibold text-neutral-700">{name}</p>
@@ -113,18 +128,18 @@ function CardAuthor({ imgClass, name, profession }: CardAuthorPropsType) {
 
 export default function Testimonials() {
   return (
-    <div className="mt-40 px-7 pb-40">
+    <div className="mt-40 px-7 pb-40 md:px-10 lg:px-20">
       {/* Header */}
-      <h1 className="text-center text-3xl font-semibold text-neutral-800">What our users say</h1>
+      <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">What our users say</h1>
       {/* Description */}
-      <p className="mt-3 text-center text-neutral-600">
+      <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
         Read how <span className="font-logo font-bold text-logo">exifoo</span> has made organizing photos
         easier for people just like you.
       </p>
       {/* Cards */}
-      <div className="mt-16">
+      <div className="mt-16 sm:mt-28 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-10 lg:flex-nowrap">
         {/* Author 1 */}
-        <Card className="bg-gradient-to-b from-white to-accent-100" first>
+        <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
           <CardReview>
             <>
               I can't recommend <span className="font-logo font-medium text-logo">exifoo</span> enough! It's
@@ -139,7 +154,7 @@ export default function Testimonials() {
           />
         </Card>
         {/* Author 2 */}
-        <Card className="bg-accent-100">
+        <Card className="bg-accent-100 sm:bg-transparent">
           <CardReview>
             <>
               I spent hours sorting through my photos, struggling to remember when and where they were taken.
@@ -154,7 +169,7 @@ export default function Testimonials() {
           />
         </Card>
         {/* Author 3 */}
-        <Card className="bg-gradient-to-t from-white to-accent-100">
+        <Card className="bg-gradient-to-t from-white to-accent-100 sm:bg-none">
           <CardReview>
             <>
               I love how easy <span className="font-logo font-medium text-logo">exifoo</span> is to use.

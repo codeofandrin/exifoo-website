@@ -18,7 +18,7 @@ function Links({ title, items }: LinksPropsType) {
           <Link
             key={`footer-${title}-item-${i}`}
             href={link}
-            className={`${i !== 0 && "mt-4"} text-neutral-500`}>
+            className={`${i !== 0 && "mt-4 sm:mt-5"} text-neutral-500 transition-[opacity] duration-200 hover:opacity-60`}>
             {text}
           </Link>
         ))}
@@ -29,24 +29,26 @@ function Links({ title, items }: LinksPropsType) {
 
 export default function Footer() {
   return (
-    <div className="mt-40 flex w-full flex-col px-7 pb-20 sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex w-fit flex-col">
-        {/* Logo */}
-        <Link href="/" className="group">
-          <Image
-            src={ImgLogoLarge}
-            alt={ImgLogoLarge.src}
-            className="h-12 w-fit transition-[opacity] duration-200 group-hover:opacity-60"
-          />
-        </Link>
-        {/* Copyright */}
-        <div className="mt-5 text-sm text-neutral-400">
-          <p>Copyright © 2024 exifoo</p>
-          <p>All rights reserved.</p>
+    <div className="mt-40 flex w-full flex-col px-7 pb-20 sm:max-w-screen-xl sm:flex-row sm:items-center">
+      <div className="flex w-fit flex-col sm:w-1/2 sm:justify-start">
+        <div className="w-fit">
+          {/* Logo */}
+          <Link href="/" className="group">
+            <Image
+              src={ImgLogoLarge}
+              alt={ImgLogoLarge.src}
+              className="h-12 w-fit transition-[opacity] duration-200 group-hover:opacity-60"
+            />
+          </Link>
+          {/* Copyright */}
+          <div className="mt-5 text-sm text-neutral-400">
+            <p>Copyright © 2024 exifoo</p>
+            <p>All rights reserved.</p>
+          </div>
         </div>
       </div>
       {/* Links */}
-      <div className="mt-14 grid grid-cols-2">
+      <div className="mt-14 grid grid-cols-2 sm:w-1/2 sm:justify-end">
         {/* Product */}
         <Links
           title="Product"

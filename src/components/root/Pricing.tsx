@@ -142,7 +142,7 @@ export default function Pricing() {
   demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28 sm:pb-52 sm:pt-36">
+    <div className="mt-52 w-full bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">
       {/* Header */}
       <h1
         id="pricing"

@@ -13,7 +13,7 @@ function Links({ title, items }: LinksPropsType) {
   return (
     <div>
       <h1 className="font-semibold text-neutral-700">{title}</h1>
-      <div className="mt-6 flex flex-col">
+      <div className="mt-6 flex w-fit flex-col">
         {items.map(({ text, link }, i) => (
           <Link
             key={`footer-${title}-item-${i}`}
@@ -30,7 +30,7 @@ function Links({ title, items }: LinksPropsType) {
 export default function Footer() {
   return (
     <div className="mt-40 w-full px-7 pb-20">
-      <div className="flex flex-col">
+      <div className="flex w-fit flex-col">
         {/* Logo */}
         <Link href="/" className="group">
           <Image

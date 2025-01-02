@@ -1,4 +1,4 @@
-#cta-text {
+.cta-text {
     color: transparent;
     background: radial-gradient(
         ellipse 250px 200px at 30% 80%,
@@ -6,4 +6,16 @@
         rgba(203, 97, 235, 60%) 100%
     );
     background-clip: text;
+}
+
+@media (min-width: 640px) {
+    .sm\:cta-text-sm {
+        color: transparent;
+        background: radial-gradient(
+            ellipse 500px 200px at 30% 90%,
+            rgba(39, 39, 42, 1) 25%,
+            rgba(203, 97, 235, 60%) 100%
+        );
+        background-clip: text;
+    }
 }

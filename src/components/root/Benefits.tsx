@@ -56,7 +56,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`${className} ${!first && "mt-16"} relative w-full overflow-hidden rounded-3xl border border-accent-800 p-6 shadow-xl sm:hidden`}>
+        className={`${className} ${!first && "mt-16"} relative w-full overflow-hidden rounded-2xl border border-accent-800 p-6 shadow-xl sm:hidden`}>
         {children}
       </div>
       {/* Desktop Card */}
@@ -69,7 +69,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onMouseLeave={handleMouseLeave}
         whileHover={{ scale: 1.01 }}
         transition={{ type: "spring", bounce: 0.6 }}
-        className={`${className} relative hidden w-[420px] overflow-hidden rounded-3xl border border-accent-800 p-10 transition-shadow duration-200 sm:block sm:hover:shadow-xl`}>
+        className={`${className} relative hidden max-w-sm overflow-hidden rounded-2xl border border-accent-800 p-8 transition-shadow duration-200 sm:block sm:hover:shadow-xl`}>
         <div
           className="pointer-events-none absolute -inset-px -z-50 opacity-0 transition duration-300"
           style={{
@@ -121,7 +121,7 @@ export default function Benefits() {
         Why we believe our tool meets today's requirements.
       </p>
       {/* Cards */}
-      <div className="mt-16 w-full sm:mt-28 sm:flex sm:flex-wrap sm:justify-center sm:gap-16">
+      <div className="mt-16 w-full sm:mt-28 sm:flex sm:flex-wrap sm:justify-center sm:gap-10 lg:flex-nowrap">
         {/* Privacy */}
         <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
           <CardIcon>

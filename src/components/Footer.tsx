@@ -42,7 +42,7 @@ export default function Footer() {
           </Link>
           {/* Copyright */}
           <div className="mt-5 text-sm text-neutral-400">
-            <p>Copyright © 2024 exifoo</p>
+            <p>Copyright © 2025 exifoo</p>
             <p>All rights reserved.</p>
           </div>
         </div>

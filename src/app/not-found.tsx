@@ -16,7 +16,7 @@ export default function NotFound() {
   }
 
   return (
-    <div className="mt-10 flex w-full max-w-screen-xl flex-col items-center justify-center px-7">
+    <div className="mt-10 flex w-full flex-col items-center justify-center px-7">
       <Image src={ImgNotFoundIllus} alt={ImgNotFoundIllus.src} className="w-60 sm:w-96" />
       <h1 className="mt-4 text-center font-logo text-4xl font-semibold text-neutral-800 sm:mt-6 sm:text-6xl">
         Page not found

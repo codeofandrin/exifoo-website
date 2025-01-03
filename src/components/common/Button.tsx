@@ -5,7 +5,7 @@ import SVGSpinner from "@/assets/icons/Spinner.svg"
 const theme: CustomFlowbiteTheme["button"] = {
   color: {
     primary:
-      "bg-primary-500 text-white hover:bg-primary-600 font-medium transition-colors duration-200 disabled:text-primary-200 disabled:hover:bg-primary-500",
+      "bg-primary-500 text-white hover:bg-primary-600 font-medium transition-colors duration-200 disabled:text-primary-200 disabled:hover:bg-primary-500 items-center",
     accent:
       "bg-white hover:bg-accent-50 border border-accent-500 text-neutral-600 font-medium transition-colors duration-200 disabled:text-neutral-400 disabled:hover:bg-white",
     silent:

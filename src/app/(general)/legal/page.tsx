@@ -1,5 +1,5 @@
 import MarkdownContent from "@/components/common/MarkdownContent"
-import MdLegalNotice from "@/content/legal-notice.md"
+import MdLegalNotice from "@/content/legal/legal-notice.md"
 
 export default function LegalNotice() {
   return (

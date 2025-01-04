@@ -3,14 +3,9 @@
 import Image from "next/image"
 
 import Button from "@/components/common/Button"
-import { EMail } from "@/utils/constants"
 import ImgNotFoundIllus from "@/assets/images/not_found_illus.png"
 
 export default function NotFound() {
-  function handleContactSupport() {
-    window.open(`mailto:${EMail.help}`, "_blank")
-  }
-
   function handleReturnHome() {
     window.location.href = "/"
   }
@@ -25,10 +20,7 @@ export default function NotFound() {
         Sorry, we couldn't find the page you're looking for.
       </p>
       <div className="mt-8 flex w-full flex-col justify-center sm:mt-14 sm:flex-row">
-        <Button color="accent" className="w-full sm:w-40" onClick={handleContactSupport}>
-          Contact Support
-        </Button>
-        <Button color="primary" className="mt-3 w-full sm:ml-5 sm:mt-0 sm:w-40" onClick={handleReturnHome}>
+        <Button color="primary" className="mt-3 w-full sm:mt-0 sm:w-40" onClick={handleReturnHome}>
           Return Home
         </Button>
       </div>

@@ -23,8 +23,8 @@ export default function NotFound() {
       <div className="mt-8 flex w-full flex-col justify-center sm:mt-14 sm:flex-row">
         <Button color="primary" className="mt-3 w-full sm:mt-0 sm:w-40" onClick={handleReturnHome}>
           <div className="flex items-center">
-            <SVGArrowLeft className="w-5 h-5" />
-            <p className="ml-2">Return Home</p>
+            <SVGArrowLeft className="h-5 w-5" />
+            <p className="ml-2">Back to Home</p>
           </div>
         </Button>
       </div>

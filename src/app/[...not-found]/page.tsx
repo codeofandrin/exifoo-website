@@ -19,7 +19,7 @@ export default function NotFound() {
         </div>
       </div>
       <div className="shrink-0">
-        <h1 className="mt-4 text-center font-logo text-4xl font-semibold text-neutral-800 sm:mt-6 sm:text-6xl">
+        <h1 className="mt-4 text-center font-logo text-4xl font-semibold tracking-tight text-neutral-800 sm:mt-6 sm:text-6xl">
           Page not found
         </h1>
         <p className="mt-6 text-center font-medium text-neutral-500 sm:mt-8 sm:text-lg">

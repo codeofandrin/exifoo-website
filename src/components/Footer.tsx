@@ -62,7 +62,7 @@ export default function Footer() {
           ]}
         />
         {/* Legal */}
-        <Links title="Legal" items={[{ text: "Imprint", link: "/imprint" }]} />
+        <Links title="Legal" items={[{ text: "Legal Notice", link: "/legal" }]} />
       </div>
     </div>
   )

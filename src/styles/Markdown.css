@@ -1,0 +1,19 @@
+.content h1 {
+    @apply mt-14 pb-6 font-logo text-4xl font-bold tracking-tight text-neutral-800;
+}
+
+.content h3 {
+    @apply mt-8 pb-3 text-lg font-semibold text-neutral-700;
+}
+
+.content p {
+    @apply whitespace-pre-wrap leading-normal text-neutral-600;
+}
+
+.content .spacer {
+    @apply h-3;
+}
+
+.content strong {
+    @apply font-semibold;
+}

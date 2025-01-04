@@ -42,11 +42,16 @@ export default function Preview() {
       <div className="mt-3 flex flex-col lg:relative lg:w-full lg:items-center">
         {/* Images */}
         <div>
-          {isToggleOn ? (
-            <Image src={ImgAppFilenamesAfter} alt="app_filenames_after" className="sm:w-fit" />
-          ) : (
-            <Image src={ImgAppFilenamesBefore} alt="app_filenames_before" className="sm:w-fit" />
-          )}
+          <Image
+            src={ImgAppFilenamesAfter}
+            alt="app_filenames_after"
+            className={`${!isToggleOn && "hidden"} sm:w-fit`}
+          />
+          <Image
+            src={ImgAppFilenamesBefore}
+            alt="app_filenames_before"
+            className={`${isToggleOn && "hidden"} sm:w-fit`}
+          />
         </div>
         {/* Description */}
         <div className="flex flex-col items-center text-center text-xl font-medium text-neutral-800 sm:text-2xl lg:absolute lg:right-0 lg:top-1/2 lg:max-w-60 lg:-translate-y-1/2 lg:transform lg:text-left">

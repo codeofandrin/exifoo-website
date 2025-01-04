@@ -4,6 +4,7 @@ import Image from "next/image"
 
 import Button from "@/components/common/Button"
 import ImgNotFoundIllus from "@/assets/images/not_found_illus.png"
+import SVGArrowLeft from "@/assets/icons/ArrowLeft.svg"
 
 export default function NotFound() {
   function handleReturnHome() {
@@ -21,7 +22,10 @@ export default function NotFound() {
       </p>
       <div className="mt-8 flex w-full flex-col justify-center sm:mt-14 sm:flex-row">
         <Button color="primary" className="mt-3 w-full sm:mt-0 sm:w-40" onClick={handleReturnHome}>
-          Return Home
+          <div className="flex items-center">
+            <SVGArrowLeft className="w-5 h-5" />
+            <p className="ml-2">Return Home</p>
+          </div>
         </Button>
       </div>
     </div>

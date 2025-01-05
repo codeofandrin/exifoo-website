@@ -55,7 +55,7 @@ export default function Footer() {
           items={[
             { text: "Download", link: "/download" },
             { text: "Features", link: "/#features" },
-            { text: "Changelog", link: "/changelog" },
+            { text: "Release Notes", link: "/release-notes" },
             { text: "Pricing", link: "/#pricing" },
             { text: "Feedback", link: `mailto:${EMail.feedback}` },
             { text: "Support", link: `mailto:${EMail.help}` }

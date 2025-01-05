@@ -11,7 +11,7 @@ import SVGX from "@/assets/icons/X.svg"
 const menuItems = [
   { name: "Download", link: "/download", highlight: true },
   { name: "Features", link: "/#features", highlight: false },
-  { name: "Changelog", link: "/changelog", highlight: true },
+  { name: "Release Notes", link: "/release-notes", highlight: true },
   { name: "Pricing", link: "/#pricing", highlight: false }
 ]
 

@@ -24,12 +24,12 @@ export default function ReleaseNotes() {
           const isLast = i === markdownFiles.length - 1
 
           return (
-            <div>
+            <div key={`release-notes-item-${i}`}>
               {/* Mobile view */}
               <div className="mt-14 flex flex-col sm:hidden">
                 <p className="text-sm font-medium text-primary-400">{date}</p>
                 <div className={`${isLast ? "pb-5" : "pb-3"}`}>
-                  <MarkdownContent key={`release-notes-item-${i}`}>{content}</MarkdownContent>
+                  <MarkdownContent>{content}</MarkdownContent>
                 </div>
               </div>
               {/* Desktop view */}
@@ -44,7 +44,7 @@ export default function ReleaseNotes() {
                   )}
                 </div>
                 <div className="pb-9">
-                  <MarkdownContent key={`release-notes-item-${i}`}>{content}</MarkdownContent>
+                  <MarkdownContent>{content}</MarkdownContent>
                 </div>
               </div>
             </div>

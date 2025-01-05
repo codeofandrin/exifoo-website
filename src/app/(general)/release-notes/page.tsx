@@ -8,7 +8,6 @@ export default function ReleaseNotes() {
     .sort()
     .reverse()
 
-  console.log(markdownFiles)
 
   return (
     <div className="flex flex-col items-center">

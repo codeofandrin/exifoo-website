@@ -27,7 +27,7 @@ function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
 
   return (
     <div className="absolute z-[99] w-full">
-      <ul className="mt-4 flex flex-col rounded-lg bg-logo p-4 font-medium">
+      <ul className="mt-4 flex flex-col rounded-lg bg-logo p-4 font-medium shadow-xl">
         {menuItems.map(({ name, link, highlight }) => {
           const currentHighlight = highlight && currentPath === link
 

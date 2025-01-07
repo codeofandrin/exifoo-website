@@ -1,4 +1,4 @@
-export function extractMetaData(text: string): Array<any> {
+export function extractMarkdownMetaData(text: string): Array<any> {
     const metaData = {} as any
 
     const metaRegExp = RegExp(/^---[\r\n](((?!---).|[\r\n])*)[\r\n]---$/m)

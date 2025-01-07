@@ -1,5 +1,5 @@
 import MarkdownContent from "@/components/common/MarkdownContent"
-import { extractMetaData } from "@/utils/helpers"
+import { extractMarkdownMetaData } from "@/utils/helpers"
 import "@/styles/Markdown.css"
 
 export default function ReleaseNotes() {
@@ -16,7 +16,7 @@ export default function ReleaseNotes() {
         </h1>
         {markdownFiles.map((release: { default: string }, i: number) => {
           let content = release.default
-          const [rawMetaData, metaData] = extractMetaData(content)
+          const [rawMetaData, metaData] = extractMarkdownMetaData(content)
           content = content.replace(rawMetaData[0], "")
           const date = metaData.date
           const isLast = i === markdownFiles.length - 1

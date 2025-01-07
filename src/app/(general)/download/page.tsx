@@ -27,7 +27,7 @@ export default async function Download() {
             </p>
             <div className="mt-8 sm:mt-12">
               <DynamicButton downloadURLMacOS={{ arm64: downloadURLMacOSArm64, x64: downloadURLMacOSX64 }} />
-              <div className="mt-1">
+              <div className="mt-3">
                 <Link className="text-xs text-neutral-400 underline" href="/release-notes">
                   Release Notes
                 </Link>

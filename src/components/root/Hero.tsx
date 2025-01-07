@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Preview */}
         <div className="mt-10 sm:relative sm:mt-0 sm:w-1/2">
           <div className="sm:absolute sm:bottom-1/2 sm:left-10 sm:translate-y-1/2 md:left-20">
-            <Image src={ImgAppPreview} alt="exifoo Preview" className="sm:min-w-[950px]" />
+            <Image src={ImgAppPreview} alt="exifoo Preview" className="sm:min-w-[950px]" priority />
           </div>
         </div>
       </div>

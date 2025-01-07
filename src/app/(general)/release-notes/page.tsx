@@ -8,11 +8,10 @@ export default function ReleaseNotes() {
     .sort()
     .reverse()
 
-
   return (
     <div className="flex flex-col items-center">
       <div className="mt-10 w-full px-7 sm:mt-20 sm:max-w-screen-xl">
-        <h1 className="mt-14 pb-6 font-logo text-3xl sm:text-4xl font-bold tracking-tight text-neutral-800">
+        <h1 className="mt-14 pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
           Release Notes
         </h1>
         {markdownFiles.map((release: { default: string }, i: number) => {

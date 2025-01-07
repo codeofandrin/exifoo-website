@@ -30,7 +30,9 @@ export default function CTA() {
         </div>
         {/* Button */}
         <div className="mt-16 flex w-full justify-center sm:mt-20">
-          <CTAButton className="w-full sm:w-72">Download for free</CTAButton>
+          <CTAButton href="/download" className="w-full sm:w-72">
+            Download for free
+          </CTAButton>
         </div>
       </div>
       <Background />

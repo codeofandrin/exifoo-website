@@ -1,5 +1,6 @@
 import Button from "../common/Button"
 import CTAButton from "../common/CTAButton"
+import { ExternalURL } from "@/utils/constants"
 import SVGCheck from "@/assets/icons/Check.svg"
 import SVGX from "@/assets/icons/X.svg"
 
@@ -115,12 +116,17 @@ interface CardButtonPropsType {
 function CardButton({ theme }: CardButtonPropsType) {
   let btn = <></>
   if (theme === "primary") {
-    btn = <CTAButton className="w-full text-sm sm:text-base">Get a license</CTAButton>
+    btn = (
+      <CTAButton href={ExternalURL.checkout} target="_blank" className="w-full text-sm sm:text-base">
+        Get a license
+      </CTAButton>
+    )
   } else if (theme === "accent") {
     btn = (
       <Button
         className="w-full rounded-full border-neutral-400 bg-transparent hover:bg-neutral-200"
         color="silent"
+        href="/download"
         size="2xl">
         <p className="text-sm sm:text-base">Start for free</p>
       </Button>

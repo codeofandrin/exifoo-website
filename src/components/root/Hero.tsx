@@ -22,7 +22,9 @@ export default function Hero() {
           </div>
           {/* CTA */}
           <div className="mt-6 sm:mt-10">
-            <CTAButton className="w-full sm:w-72">Download for free</CTAButton>
+            <CTAButton href="/download" className="w-full sm:w-72">
+              Download for free
+            </CTAButton>
           </div>
         </div>
         {/* Preview */}

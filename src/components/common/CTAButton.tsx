@@ -8,14 +8,27 @@ import "@/styles/root/CTAButton.css"
 
 interface CTAButtonPropsType extends Omit<HTMLMotionProps<"button">, "ref"> {
   children: string
+  href?: string | null
+  target?: string | null
 }
 
-export default function CTAButton({ children, ...props }: CTAButtonPropsType) {
+export default function CTAButton({ children, href = null, target = null, ...props }: CTAButtonPropsType) {
+  function handleHrefClick() {
+    if (href !== null) {
+      if (target !== null) {
+        window.open(href, target)
+      } else {
+        window.location.href = href
+      }
+    }
+  }
+
   return (
     <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", bounce: 0.6 }}
+      onClick={handleHrefClick}
       {...props}
       className={`${props.className} btn-cta group relative overflow-hidden rounded-full bg-gradient-to-t from-primary-600 to-primary-500 px-7 py-3.5`}>
       <div className="flex items-center justify-center">

@@ -4,6 +4,11 @@ export class EMail {
     static info = "info@exifoo.com"
 }
 
-export class ExternalURL {
-    static checkout = "https://store.exifoo.com/checkout"
+export class Checkout {
+    static storeURL = "https://store.exifoo.com"
+    // productID
+    //      Live Mode: TODO
+    //      Test Mode: 28dafee5-7c7f-48c2-8a15-4e4700742055"
+    static productID = "28dafee5-7c7f-48c2-8a15-4e4700742055"
+    static productURL = `${this.storeURL}/buy/${this.productID}`
 }

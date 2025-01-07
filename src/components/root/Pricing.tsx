@@ -1,6 +1,6 @@
 import Button from "../common/Button"
 import CTAButton from "../common/CTAButton"
-import { ExternalURL } from "@/utils/constants"
+import { Checkout } from "@/utils/constants"
 import SVGCheck from "@/assets/icons/Check.svg"
 import SVGX from "@/assets/icons/X.svg"
 
@@ -117,7 +117,7 @@ function CardButton({ theme }: CardButtonPropsType) {
   let btn = <></>
   if (theme === "primary") {
     btn = (
-      <CTAButton href={ExternalURL.checkout} target="_blank" className="w-full text-sm sm:text-base">
+      <CTAButton href={Checkout.productURL} target="_blank" className="w-full text-sm sm:text-base">
         Get a license
       </CTAButton>
     )

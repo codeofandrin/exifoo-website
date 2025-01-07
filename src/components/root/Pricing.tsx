@@ -186,7 +186,7 @@ export default function Pricing() {
               version="Full Version"
               price={
                 <>
-                  $19 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
+                  $9.99 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
                 </>
               }
               description={

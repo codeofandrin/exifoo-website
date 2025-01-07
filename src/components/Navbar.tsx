@@ -4,6 +4,7 @@ import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 
+import { useScrollPosition } from "@/hooks/useScrollPosition"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
 import SVGMenu from "@/assets/icons/Menu.svg"
 import SVGX from "@/assets/icons/X.svg"
@@ -50,42 +51,47 @@ function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false)
   const currentPath = usePathname()
+  const scrollPosition = useScrollPosition()
 
   function handleToggleMenu() {
     setIsToggleOpen(!isToggleOpen)
   }
 
   return (
-    <div className="flex w-full flex-col px-7 sm:max-w-screen-xl">
-      <div className="flex items-center justify-between pt-10">
-        <Link href="/" className="group">
-          <img
-            src={ImgLogoLarge.src}
-            alt="exifoo Logo"
-            className="w-40 transition-[opacity] duration-200 group-hover:opacity-60"
-          />
-        </Link>
-        <div className="hidden space-x-8 sm:block">
-          {menuItems.map(({ name, link, highlight }) => {
-            const currentHighlight = highlight && currentPath === link
-            return (
-              <Link
-                key={`menu-item-${name}`}
-                href={link}
-                className={`${currentHighlight ? "text-primary-400" : "text-logo"} transition-[opacity] duration-200 hover:opacity-60`}>
-                {name}
-              </Link>
-            )
-          })}
+    <div
+      className={`fixed top-0 z-[99] w-full ${scrollPosition > 20 ? "shadow-md" : "shadow-none"} flex justify-center bg-white/70 backdrop-blur-xl transition-shadow duration-300`}>
+      <div className="flex w-full flex-col px-7 sm:max-w-screen-xl">
+        <div
+          className={`flex items-center justify-between ${scrollPosition > 20 ? "py-7 sm:py-5" : "py-7 sm:py-10"} transition-[padding] duration-300`}>
+          <Link href="/" className="group">
+            <img
+              src={ImgLogoLarge.src}
+              alt="exifoo Logo"
+              className="w-40 transition-[opacity] duration-200 group-hover:opacity-60"
+            />
+          </Link>
+          <div className="hidden space-x-8 sm:block">
+            {menuItems.map(({ name, link, highlight }) => {
+              const currentHighlight = highlight && currentPath === link
+              return (
+                <Link
+                  key={`menu-item-${name}`}
+                  href={link}
+                  className={`${currentHighlight ? "text-primary-400" : "text-logo"} transition-[opacity] duration-200 hover:opacity-60`}>
+                  {name}
+                </Link>
+              )
+            })}
+          </div>
+          {/* Mobile Menu Button */}
+          <button className="sm:hidden" onClick={handleToggleMenu}>
+            {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
+          </button>
         </div>
-        {/* Mobile Menu Button */}
-        <button className="sm:hidden" onClick={handleToggleMenu}>
-          {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
-        </button>
-      </div>
-      {/* Mobile Menu */}
-      <div className="relative sm:hidden">
-        {isToggleOpen && <MobileMenu currentPath={currentPath} closeMenu={() => setIsToggleOpen(false)} />}
+        {/* Mobile Menu */}
+        <div className="relative sm:hidden">
+          {isToggleOpen && <MobileMenu currentPath={currentPath} closeMenu={() => setIsToggleOpen(false)} />}
+        </div>
       </div>
     </div>
   )

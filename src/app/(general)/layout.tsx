@@ -11,7 +11,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="flex flex-col items-center">
         <Navbar />
-        <div className="w-full">{children}</div>
+        <div className="mt-24 w-full">{children}</div>
         <Footer />
       </body>
     </html>

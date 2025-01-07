@@ -48,7 +48,7 @@ export default async function Download() {
         <div className="mt-10">
           <h2
             id="other-downloads"
-            className="scroll-mt-20 text-xl font-semibold text-neutral-700 sm:text-2xl">
+            className="scroll-mt-32 text-xl font-semibold text-neutral-700 sm:text-2xl">
             Other downloads
           </h2>
           <p className="mt-2 text-neutral-600 sm:mt-4"> Need a specific download? Get it here.</p>

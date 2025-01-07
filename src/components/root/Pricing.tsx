@@ -149,7 +149,7 @@ export default function Pricing() {
 
   return (
     <div className="mt-52 flex w-full flex-col items-center bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">
-      <div id="pricing" className="w-full scroll-mt-20 sm:max-w-screen-xl">
+      <div id="pricing" className="w-full scroll-mt-32 sm:max-w-screen-xl">
         {/* Header */}
         <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
           <p className="flex flex-col sm:block">

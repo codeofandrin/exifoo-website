@@ -46,7 +46,7 @@ export default function Features() {
       {/* Features */}
       <div
         id="features"
-        className="flex scroll-mt-20 flex-col items-center bg-primary-50 px-7 pb-20 sm:pb-40">
+        className="flex scroll-mt-32 flex-col items-center bg-primary-50 px-7 pb-20 sm:pb-40">
         <div className="sm:max-w-screen-xl">
           {/* Heading */}
           <h1 className="text-3xl font-semibold text-neutral-800 sm:max-w-2xl sm:text-4xl">

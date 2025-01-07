@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 
 import { useScrollPosition } from "@/hooks/useScrollPosition"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
@@ -64,9 +65,9 @@ export default function Navbar() {
         <div
           className={`flex items-center justify-between ${scrollPosition > 20 ? "py-7 sm:py-5" : "py-7 sm:py-10"} transition-[padding] duration-300`}>
           <Link href="/" className="group">
-            <img
-              src={ImgLogoLarge.src}
-              alt="exifoo Logo"
+            <Image
+              src={ImgLogoLarge}
+              alt={ImgLogoLarge.src}
               className="w-40 transition-[opacity] duration-200 group-hover:opacity-60"
             />
           </Link>

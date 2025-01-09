@@ -18,6 +18,7 @@
     "bump:dev": "npm version $npm_config_vers --git-tag-version false && git commit -a -m 'Bump version to development'"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.47.12",
     "flowbite-react": "^0.10.2",
     "framer-motion": "^11.15.0",
     "next": "15.0.3",

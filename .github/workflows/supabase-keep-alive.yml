@@ -1,0 +1,14 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    - cron: "0 0 * * 0,3" # runs every Sunday and Wednesday
+  workflow_dispatch:
+
+jobs:
+  send-http-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send HTTP Request
+        run: curl https://exifoo.com/api/supabase-keep-alive

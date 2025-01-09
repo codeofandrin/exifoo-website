@@ -6,9 +6,6 @@ export class EMail {
 
 export class Checkout {
     static storeURL = "https://store.exifoo.com"
-    // productID
-    //      Live Mode: TODO
-    //      Test Mode: 28dafee5-7c7f-48c2-8a15-4e4700742055"
-    static productID = "28dafee5-7c7f-48c2-8a15-4e4700742055"
+    static productID = process.env.LEMSQZY_PRODUCT_ID
     static productURL = `${this.storeURL}/buy/${this.productID}`
 }

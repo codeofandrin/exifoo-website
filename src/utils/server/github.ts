@@ -10,7 +10,7 @@ async function request(method: string, url: string): Promise<Record<any, any>> {
         "User-Agent": "exifoo (exifoo.com)"
     }
 
-    const data = await fetch(`${API_BASE_URL}${url}`, { method, headers })
+    const data = await fetch(`${API_BASE_URL}${url}`, { method, headers, cache: "no-store" })
     return data.json()
 }
 

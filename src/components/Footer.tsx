@@ -4,6 +4,20 @@ import Link from "next/link"
 import { EMail } from "@/utils/constants"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
 
+const productItems = [
+  { text: "Download", link: "/download" },
+  { text: "Features", link: "/#features" },
+  { text: "Release Notes", link: "/release-notes" },
+  { text: "Pricing", link: "/#pricing" },
+  { text: "Feedback", link: `mailto:${EMail.feedback}` },
+  { text: "Support", link: `mailto:${EMail.help}` }
+]
+
+const legalItems = [
+  { text: "Legal Notice", link: "/legal" },
+  { text: "Privacy Policy", link: "/privacy" }
+]
+
 interface LinksPropsType {
   title: string
   items: { text: string; link: string }[]
@@ -50,19 +64,9 @@ export default function Footer() {
       {/* Links */}
       <div className="mt-14 grid grid-cols-2 sm:w-1/2 sm:justify-end">
         {/* Product */}
-        <Links
-          title="Product"
-          items={[
-            { text: "Download", link: "/download" },
-            { text: "Features", link: "/#features" },
-            { text: "Release Notes", link: "/release-notes" },
-            { text: "Pricing", link: "/#pricing" },
-            { text: "Feedback", link: `mailto:${EMail.feedback}` },
-            { text: "Support", link: `mailto:${EMail.help}` }
-          ]}
-        />
+        <Links title="Product" items={productItems} />
         {/* Legal */}
-        <Links title="Legal" items={[{ text: "Legal Notice", link: "/legal" }]} />
+        <Links title="Legal" items={legalItems} />
       </div>
     </div>
   )

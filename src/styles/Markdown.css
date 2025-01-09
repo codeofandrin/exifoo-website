@@ -1,13 +1,13 @@
 .content h1 {
-    @apply mt-14 pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl;
+    @apply pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl;
 }
 
 .content h2 {
-    @apply mt-10 pb-3 text-2xl font-semibold text-neutral-700;
+    @apply pb-3 text-2xl font-semibold text-neutral-700;
 }
 
 .content h3 {
-    @apply mt-8 pb-3 text-lg font-semibold text-neutral-700;
+    @apply pb-3 text-lg font-semibold text-neutral-700;
 }
 
 .content h4 {
@@ -15,15 +15,23 @@
 }
 
 .content p {
-    @apply whitespace-pre-wrap leading-normal text-neutral-600;
+    @apply leading-normal text-neutral-600;
 }
 
 .content ul {
-    @apply list-inside list-disc leading-normal text-neutral-600;
+    @apply my-3 ml-3 list-inside list-disc leading-normal text-neutral-600;
 }
 
 .content .spacer {
     @apply h-3;
+}
+
+.content .spacer-lg {
+    @apply h-10;
+}
+
+.content .spacer-2xl {
+    @apply h-20;
 }
 
 .content strong {

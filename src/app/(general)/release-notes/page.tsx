@@ -1,6 +1,5 @@
 import MarkdownContent from "@/components/common/MarkdownContent"
 import { extractMarkdownMetaData } from "@/utils/helpers"
-import "@/styles/Markdown.css"
 
 export default function ReleaseNotes() {
   const importAllFiles = (r: any) => r.keys().map(r)
@@ -10,8 +9,8 @@ export default function ReleaseNotes() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="mt-10 w-full px-7 sm:mt-20 sm:max-w-screen-xl">
-        <h1 className="mt-14 pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
+      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-screen-xl">
+        <h1 className="pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
           Release Notes
         </h1>
         {markdownFiles.map((release: { default: string }, i: number) => {
@@ -26,7 +25,7 @@ export default function ReleaseNotes() {
               {/* Mobile view */}
               <div className="mt-14 flex flex-col sm:hidden">
                 <p className="text-sm font-medium text-primary-400">{date}</p>
-                <div className={`${isLast ? "pb-5" : "pb-3"}`}>
+                <div className={`${isLast ? "pb-5" : "pb-3"} mt-5`}>
                   <MarkdownContent>{content}</MarkdownContent>
                 </div>
               </div>
@@ -41,7 +40,7 @@ export default function ReleaseNotes() {
                     </div>
                   )}
                 </div>
-                <div className="pb-9">
+                <div className="mt-8 pb-9">
                   <MarkdownContent>{content}</MarkdownContent>
                 </div>
               </div>

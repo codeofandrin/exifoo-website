@@ -1,15 +1,19 @@
 # Legal Notice
 
+<div class="spacer-lg"></div>
+
 ### Responsible entity
 
-Andrin Schaller
-Fahrweidstrasse 83
-5630 Muri AG
+Andrin Schaller \
+Fahrweidstrasse 83 \
+5630 Muri AG \
 Switzerland
 
 <div className="spacer"></div>
 
 **Email:** [$email-info](mailto:$email-info)
+
+<div class="spacer-lg"></div>
 
 ### Disclaimer
 
@@ -20,9 +24,13 @@ Liability claims against the author for material or immaterial damage resulting 
 
 All offers are non-binding. The author expressly reserves the right to change, add to, or delete parts of the pages or the entire offer without prior notice, or to temporarily or permanently cease publication.
 
+<div class="spacer-lg"></div>
+
 ### Disclaimer for content and links
 
 References and links to third party websites are outside our area of responsibility. It rejected any responsibility for such websites. Access to and use of such websites is at the user's own risk.
+
+<div class="spacer-lg"></div>
 
 ### Copyright declaration
 

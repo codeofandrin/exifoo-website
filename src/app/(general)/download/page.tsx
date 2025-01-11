@@ -26,7 +26,14 @@ export default async function Download() {
               keep your photos organized.
             </p>
             <div className="mt-8 sm:mt-12">
-              <DynamicButton downloadURLMacOS={{ arm64: downloadURLMacOSArm64, x64: downloadURLMacOSX64 }} />
+              <div className="md:flex md:items-center">
+                <DynamicButton
+                  downloadURLMacOS={{ arm64: downloadURLMacOSArm64, x64: downloadURLMacOSX64 }}
+                />
+                <p className="mt-3 text-sm text-neutral-600 md:ml-5 md:mt-0">
+                  macOS 10.15 (Catalina) or higher
+                </p>
+              </div>
               <div className="mt-3">
                 <Link className="text-xs text-neutral-400 underline" href="/release-notes">
                   Release Notes

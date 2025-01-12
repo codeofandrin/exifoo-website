@@ -10,14 +10,29 @@ interface DynamicButtonPropsType {
 }
 
 export default function DynamicButton({ downloadURLMacOS }: DynamicButtonPropsType) {
-  const [downloadLink, setDownloadLink] = useState<string | undefined>()
+  const [downloadLink, setDownloadLink] = useState<string | undefined>(downloadURLMacOS.x64)
+  const [isNotReliable, setIsNotReliable] = useState(false)
 
   useEffect(() => {
     const x64Match = navigator.userAgent.match(/OS X 10_([789]|1[01234])/)
+
     if (x64Match === null) {
-      setDownloadLink(downloadURLMacOS.arm64)
-    } else {
-      setDownloadLink(downloadURLMacOS.x64)
+      // if it's >= 10.15 it could be x64 or arm64 -> further checks are necessary
+      // Reference: https://stackoverflow.com/a/65412357/13508045
+      var w = document.createElement("canvas").getContext("webgl") as WebGLRenderingContext
+      var d = w.getExtension("WEBGL_debug_renderer_info")
+      var g = (d && w.getParameter(d.UNMASKED_RENDERER_WEBGL)) || ""
+      if (g.match(/Apple/)) {
+        console.log("apple match")
+        if (g.match(/Apple GPU/)) {
+          console.log("apple gpu match")
+          // Safari
+          // cannot reliable detect arch, let's keep x64
+          setIsNotReliable(true)
+        } else {
+          setDownloadLink(downloadURLMacOS.arm64)
+        }
+      }
     }
   }, [])
 
@@ -25,7 +40,11 @@ export default function DynamicButton({ downloadURLMacOS }: DynamicButtonPropsTy
     <Button className="w-full sm:w-fit" color="primary" size="xl" href={downloadLink}>
       <div className="flex items-center">
         <SVGApple className="h-6 w-6" />
-        <p className="ml-2">Download for macOS</p>
+        {isNotReliable ? (
+          <p className="ml-2">Download for macOS (Intel Chip)</p>
+        ) : (
+          <p className="ml-2">Download for macOS</p>
+        )}
       </div>
     </Button>
   )

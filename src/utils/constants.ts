@@ -6,6 +6,6 @@ export class EMail {
 
 export class Checkout {
     static storeURL = "https://store.exifoo.com"
-    static productID = process.env.LEMSQZY_PRODUCT_ID
-    static productURL = `${this.storeURL}/buy/${this.productID}`
+    static checkoutID = process.env.LEMSQZY_CHECKOUT_ID
+    static checkoutURL = `${this.storeURL}/buy/${this.checkoutID}`
 }

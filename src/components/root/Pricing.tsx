@@ -117,7 +117,7 @@ function CardButton({ theme }: CardButtonPropsType) {
   let btn = <></>
   if (theme === "primary") {
     btn = (
-      <CTAButton href={Checkout.productURL} target="_blank" className="w-full text-sm sm:text-base">
+      <CTAButton href={Checkout.checkoutURL} target="_blank" className="w-full text-sm sm:text-base">
         Get a license
       </CTAButton>
     )

@@ -63,13 +63,13 @@ export default async function Download() {
             <Button color="primary" href={downloadURLMacOSArm64}>
               <div className="flex items-center">
                 <SVGApple className="h-5 w-5" />
-                <p className="ml-2">Download for macOS (Apple Silicon)</p>
+                <p className="ml-2">Download for macOS (Apple Chip)</p>
               </div>
             </Button>
             <Button className="mt-3 sm:ml-5 sm:mt-0" color="primary" href={downloadURLMacOSX64}>
               <div className="flex items-center">
                 <SVGApple className="h-5 w-5" />
-                <p className="ml-2">Download for macOS (Intel-based Mac)</p>
+                <p className="ml-2">Download for macOS (Intel Chip)</p>
               </div>
             </Button>
           </div>

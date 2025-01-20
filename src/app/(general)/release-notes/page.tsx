@@ -1,5 +1,12 @@
+import type { Metadata } from "next"
+
 import MarkdownContent from "@/components/common/MarkdownContent"
 import { extractMarkdownMetaData } from "@/utils/helpers"
+
+export const metadata: Metadata = {
+  title: "Release Notes - exifoo",
+  description: "Latest changes of the exifoo desktop app."
+}
 
 export default function ReleaseNotes() {
   const importAllFiles = (r: any) => r.keys().map(r)

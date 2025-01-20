@@ -1,5 +1,11 @@
+import type { Metadata } from "next"
+
 import MarkdownContent from "@/components/common/MarkdownContent"
 import MdLegalNotice from "@/content/legal/legal-notice.md"
+
+export const metadata: Metadata = {
+  title: "Legal Notice - exifoo"
+}
 
 export default function LegalNotice() {
   return (

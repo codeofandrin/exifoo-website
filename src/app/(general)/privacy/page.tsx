@@ -1,6 +1,12 @@
+import type { Metadata } from "next"
+
 import MarkdownContent from "@/components/common/MarkdownContent"
 import MdPrivacyPolicy from "@/content/privacy/privacy-policy.md"
 import "@/styles/privacy/PrivacyPolicy.css"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy - exifoo"
+}
 
 export default function PrivacyPolicy() {
   return (

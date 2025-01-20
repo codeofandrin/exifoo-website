@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 
 import Button from "@/components/common/Button"
 import DynamicButton from "@/components/download/DynamicButton"
@@ -7,6 +8,11 @@ import Cards from "@/components/download/Cards"
 import { getMacOSDownloadURL } from "@/utils/server/github"
 import ImgAppPreview from "@/assets/images/app_preview_rename_success.png"
 import SVGApple from "@/assets/icons/Apple.svg"
+
+export const metadata: Metadata = {
+  title: "Download exifoo",
+  description: "Shoot more. Organize less. With exifoo you can keep your photos organized."
+}
 
 export default async function Download() {
   const downloadURLMacOSArm64 = await getMacOSDownloadURL("arm64")

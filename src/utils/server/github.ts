@@ -19,8 +19,8 @@ export async function getMacOSDownloadURL(arch: string): Promise<string> {
     const data = await request("GET", latestReleaseUrl)
     const releaseAssets: Record<string, any>[] = data.assets
 
-    let downloadUrl = ""
-    for (let i = 0; i < releaseAssets.length; i++) {
+    let downloadUrl
+    for (let i = 0; i < releaseAssets?.length; i++) {
         const asset = releaseAssets[i]
         const assetName: string = asset.name
         if (assetName.includes(".dmg") && assetName.includes(arch)) {

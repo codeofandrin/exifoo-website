@@ -35,5 +35,7 @@ References and links to third party websites are outside our area of responsibil
 ### Copyright declaration
 
 The copyrights and all other rights to content, images, photos or other files on this website belong exclusively to Andrin Schaller or the specifically named rights holders. The written consent of the copyright holder must be obtained in advance for the reproduction of any elements.
-\
+
+<div class="spacer-lg"></div>
+
 **Source:** BrainBox Solutions (not liable for the created result)

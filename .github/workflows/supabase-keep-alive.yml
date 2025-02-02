@@ -11,4 +11,4 @@ jobs:
 
     steps:
       - name: Send HTTP Request
-        run: curl https://exifoo.com/api/supabase-keep-alive
+        run: curl -L https://exifoo.com/api/supabase-keep-alive

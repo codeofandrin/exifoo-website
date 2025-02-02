@@ -6,14 +6,9 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 
 export async function GET() {
     try {
-        let error
-        const respKeepAlive = await supabase.from("keep-alive").select()
-        error = respKeepAlive.error
+        const { data, error } = await supabase.from("keep-alive").select()
         if (error) throw new Error(error.message)
-
-        const respExistsMachineId = await supabase.rpc("exists_machine_id", { mid_input: "foo" })
-        error = respExistsMachineId.error
-        return Response.json({ message: "Successful" })
+        return Response.json(data)
     } catch (error) {
         const message = (error as Error).message ?? "An error occurred."
         return Response.json({ error: message }, { status: 400 })

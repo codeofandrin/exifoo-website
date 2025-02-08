@@ -3,16 +3,15 @@ import type { Metadata } from "next"
 import MarkdownContent from "@/components/common/MarkdownContent"
 import { extractMarkdownMetaData } from "@/utils/helpers"
 
+import { getReleaseNotes } from "@/utils/server/github"
+
 export const metadata: Metadata = {
   title: "Release Notes - exifoo",
   description: "Latest changes of the exifoo desktop app."
 }
 
-export default function ReleaseNotes() {
-  const importAllFiles = (r: any) => r.keys().map(r)
-  const markdownFiles = importAllFiles(require.context("../../../content/release-notes", false, /\.md$/))
-    .sort()
-    .reverse()
+export default async function ReleaseNotes() {
+  const markdownFiles: string[] = await getReleaseNotes()
 
   return (
     <div className="flex flex-col items-center">
@@ -20,8 +19,7 @@ export default function ReleaseNotes() {
         <h1 className="pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
           Release Notes
         </h1>
-        {markdownFiles.map((release: { default: string }, i: number) => {
-          let content = release.default
+        {markdownFiles.map((content: string, i: number) => {
           const [rawMetaData, metaData] = extractMarkdownMetaData(content)
           content = content.replace(rawMetaData[0], "")
           const date = metaData.date

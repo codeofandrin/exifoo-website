@@ -53,7 +53,12 @@ export default async function Download() {
           {/* Preview */}
           <div className="mt-10 sm:relative sm:mt-32 sm:w-1/2">
             <div className="sm:absolute sm:bottom-1/2 sm:left-5 sm:translate-y-1/2">
-              <Image src={ImgAppPreview} alt="exifoo Preview" className="sm:min-w-[900px]" priority />
+              <Image
+                src={ImgAppPreview}
+                alt="exifoo Preview"
+                className="select-none sm:min-w-[900px]"
+                priority
+              />
             </div>
           </div>
         </div>

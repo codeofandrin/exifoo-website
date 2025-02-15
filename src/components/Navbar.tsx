@@ -68,7 +68,7 @@ export default function Navbar() {
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="w-40 transition-[opacity] duration-200 group-hover:opacity-60"
+              className="w-40 select-none transition-[opacity] duration-200 group-hover:opacity-60"
             />
           </Link>
           <div className="hidden space-x-8 sm:block">

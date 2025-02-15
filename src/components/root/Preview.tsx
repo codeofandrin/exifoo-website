@@ -21,7 +21,7 @@ export default function Preview() {
           <Image
             src={ImgArrowMarker}
             alt="arrow marker"
-            className="mt-2 w-10 -rotate-[160deg] sm:ml-4 sm:mt-4 sm:w-12 sm:rotate-[120deg] md:ml-8 md:mt-0 md:w-16 md:rotate-[100deg]"
+            className="mt-2 w-10 -rotate-[160deg] select-none sm:ml-4 sm:mt-4 sm:w-12 sm:rotate-[120deg] md:ml-8 md:mt-0 md:w-16 md:rotate-[100deg]"
           />
         </div>
       </div>
@@ -46,13 +46,13 @@ export default function Preview() {
             src={ImgAppFilenamesAfter}
             alt="app_filenames_after"
             priority={true}
-            className={`${!isToggleOn && "hidden"} sm:w-fit`}
+            className={`${!isToggleOn && "hidden"} select-none sm:w-fit`}
           />
           <Image
             src={ImgAppFilenamesBefore}
             alt="app_filenames_before"
             priority={true}
-            className={`${isToggleOn && "hidden"} sm:w-fit`}
+            className={`${isToggleOn && "hidden"} select-none sm:w-fit`}
           />
         </div>
         {/* Description */}

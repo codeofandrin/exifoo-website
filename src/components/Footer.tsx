@@ -51,7 +51,7 @@ export default function Footer() {
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="h-12 w-fit transition-[opacity] duration-200 group-hover:opacity-60"
+              className="h-12 w-fit select-none transition-[opacity] duration-200 group-hover:opacity-60"
             />
           </Link>
           {/* Copyright */}

@@ -58,7 +58,7 @@ export default function Features() {
             <Image
               src={ImgFilenamesSelect}
               alt="app_filenames_select"
-              className="rounded-[4.5px] shadow-apple md:max-w-sm lg:max-w-xl"
+              className="select-none rounded-[4.5px] shadow-apple md:max-w-sm lg:max-w-xl"
             />
             <div className="flex flex-col md:ml-14 md:max-w-lg lg:ml-24">
               <FeatureTitle>Select unlimited files</FeatureTitle>
@@ -74,7 +74,7 @@ export default function Features() {
               <Image
                 src={ImgRenameOptions}
                 alt="app_options"
-                className="w-72 rounded-lg shadow-apple md:min-w-[290px] lg:mr-20 lg:min-w-fit"
+                className="w-72 select-none rounded-lg shadow-apple md:min-w-[290px] lg:mr-20 lg:min-w-fit"
               />
             </div>
             <div className="flex flex-col md:mr-14 md:max-w-lg lg:mr-24">
@@ -91,7 +91,7 @@ export default function Features() {
               <Image
                 src={ImgExampleOutput}
                 alt="app_example_output"
-                className="w-72 rounded-lg shadow-apple md:min-w-[290px] lg:ml-20 lg:min-w-fit"
+                className="w-72 select-none rounded-lg shadow-apple md:min-w-[290px] lg:ml-20 lg:min-w-fit"
               />
             </div>
             <div className="flex flex-col md:ml-14 md:max-w-md lg:ml-24">
@@ -108,7 +108,7 @@ export default function Features() {
               <Image
                 src={ImgStatusReport}
                 alt="app_status_report"
-                className="w-80 rounded-lg shadow-apple md:min-w-96 lg:mr-20"
+                className="w-80 select-none rounded-lg shadow-apple md:min-w-96 lg:mr-20"
               />
             </div>
             <div className="flex flex-col md:mr-14 md:max-w-lg lg:mr-24">

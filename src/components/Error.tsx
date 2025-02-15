@@ -16,7 +16,7 @@ export default function Error({ reset }: ErrorPropsType) {
     <div className="flex h-screen w-full flex-col items-center px-7">
       <div className="h-1/2 justify-start">
         <div className="flex h-full flex-col justify-end">
-          <Image src={ImgErrorIllus} alt={ImgErrorIllus.src} className="w-60 sm:w-96" />
+          <Image src={ImgErrorIllus} alt={ImgErrorIllus.src} className="w-60 select-none sm:w-96" />
         </div>
       </div>
       <div className="shrink-0">

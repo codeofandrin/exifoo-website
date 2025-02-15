@@ -45,11 +45,13 @@ export default function Preview() {
           <Image
             src={ImgAppFilenamesAfter}
             alt="app_filenames_after"
+            priority={true}
             className={`${!isToggleOn && "hidden"} sm:w-fit`}
           />
           <Image
             src={ImgAppFilenamesBefore}
             alt="app_filenames_before"
+            priority={true}
             className={`${isToggleOn && "hidden"} sm:w-fit`}
           />
         </div>

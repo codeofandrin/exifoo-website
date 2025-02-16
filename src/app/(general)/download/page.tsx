@@ -11,7 +11,8 @@ import SVGApple from "@/assets/icons/Apple.svg"
 
 export const metadata: Metadata = {
   title: "Download exifoo",
-  description: "Shoot more. Organize less. With exifoo you can keep your photos organized."
+  description:
+    "exifoo helps you keep your photos organized by adding the date and time from EXIF data to the filename."
 }
 
 export default async function Download() {

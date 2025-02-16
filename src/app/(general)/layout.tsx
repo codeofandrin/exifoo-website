@@ -5,9 +5,9 @@ import Footer from "@/components/Footer"
 import "../globals.css"
 
 export const metadata: Metadata = {
-  title: "exifoo - Shoot more. Organize less.",
+  title: "exifoo - Rename photos based on capture date and time",
   description:
-    "exifoo helps you keep your photos organized by adding the date and time of capture to the filename."
+    "exifoo helps you keep your photos organized by adding the date and time from EXIF data to the filename."
 }
 
 export default function RootLayout({

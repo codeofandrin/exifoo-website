@@ -118,9 +118,8 @@ function CardAuthor({ imgClass, name, profession }: CardAuthorPropsType) {
       <div className={`${imgClass} h-12 w-12 rounded-full bg-cover bg-center`}></div>
       {/* Text */}
       <div className="ml-3 flex flex-col">
-        <p className="font-semibold text-neutral-700">{name}</p>
-        <p className="text-sm text-neutral-600">{profession}</p>
-        <p></p>
+        <h1 className="font-semibold text-neutral-700">{name}</h1>
+        <h2 className="text-sm text-neutral-600">{profession}</h2>
       </div>
     </div>
   )
@@ -135,10 +134,10 @@ export default function Testimonials() {
           What our users say
         </h1>
         {/* Description */}
-        <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
+        <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
           Read how <span className="font-logo font-bold text-logo">exifoo</span> has made organizing photos
           easier for people just like you.
-        </p>
+        </h2>
         {/* Cards */}
         <div className="mt-16 sm:mt-28 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-10 lg:flex-nowrap">
           {/* Author 1 */}

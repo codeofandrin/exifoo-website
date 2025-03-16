@@ -112,14 +112,14 @@ export default function Benefits() {
     <div className="mt-20 flex w-full flex-col items-center px-7 sm:max-w-screen-xl">
       {/* Heading */}
       <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
-        <p className="flex flex-col sm:block">
+        <div className="flex flex-col sm:block">
           Our tool. <span className="font-bold text-accent-500">Your experience.</span>
-        </p>
+        </div>
       </h1>
       {/* Description */}
-      <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
+      <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
         Why we believe our tool meets today's requirements.
-      </p>
+      </h2>
       {/* Cards */}
       <div className="mt-16 w-full sm:mt-28 sm:flex sm:flex-wrap sm:justify-center sm:gap-10 lg:flex-nowrap">
         {/* Privacy */}

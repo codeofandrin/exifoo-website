@@ -10,15 +10,17 @@ export default function Hero() {
         <div className="sm:w-1/2">
           {/* Heading */}
           <div className="flex flex-col font-logo text-4xl font-bold tracking-tight text-neutral-800 sm:text-6xl">
-            <p>Shoot more.</p>
-            <p className="text-accent-500">Organize less.</p>
+            <h1>
+              <p>Shoot more.</p>
+              <p className="text-accent-500">Organize less.</p>
+            </h1>
           </div>
           {/* Description */}
           <div className="mt-6 sm:mt-10">
-            <p className="text-neutral-500 sm:text-lg">
+            <h2 className="text-neutral-500 sm:text-lg">
               <span className="font-logo font-medium text-logo">exifoo</span> helps you keep your photos
               organized by adding the date and time of capture to the filename.
-            </p>
+            </h2>
           </div>
           {/* CTA */}
           <div className="mt-6 sm:mt-10">

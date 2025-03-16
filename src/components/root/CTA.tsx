@@ -24,10 +24,10 @@ export default function CTA() {
     <div className="relative mt-20 w-full overflow-hidden">
       <div className="flex flex-col items-center justify-center px-7 py-20">
         {/* Text */}
-        <div className="cta-text sm:cta-text-sm p-1 text-center font-logo text-4xl font-bold tracking-tight sm:text-6xl">
+        <h1 className="cta-text sm:cta-text-sm p-1 text-center font-logo text-4xl font-bold tracking-tight sm:text-6xl">
           <p>Ready?</p>
           <p className="mt-1 sm:mt-3">Start organizing today!</p>
-        </div>
+        </h1>
         {/* Button */}
         <div className="mt-16 flex w-full justify-center sm:mt-20">
           <CTAButton href="/download" className="w-full sm:w-72">

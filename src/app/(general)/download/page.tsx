@@ -27,11 +27,11 @@ export default async function Download() {
             <h1 className="font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
               Download <span className="tracking-tighter text-logo">exifoo</span>
             </h1>
-            <p className="mt-3 text-neutral-600 sm:mt-6 sm:text-lg">
+            <h2 className="mt-3 text-neutral-600 sm:mt-6 sm:text-lg">
               Shoot more. Organize less. With{" "}
               <span className="font-logo text-xl font-semibold tracking-tight text-logo">exifoo</span> you can
               keep your photos organized.
-            </p>
+            </h2>
             <div className="mt-8 sm:mt-12">
               <div className="lg:flex lg:items-center">
                 <DynamicButton

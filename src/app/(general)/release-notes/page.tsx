@@ -29,7 +29,7 @@ export default async function ReleaseNotes() {
             <div key={`release-notes-item-${i}`}>
               {/* Mobile view */}
               <div className="mt-14 flex flex-col sm:hidden">
-                <p className="text-sm font-medium text-primary-400">{date}</p>
+                <h3 className="text-sm font-medium text-primary-400">{date}</h3>
                 <div className={`${isLast ? "pb-5" : "pb-3"} mt-5`}>
                   <MarkdownContent>{content}</MarkdownContent>
                 </div>

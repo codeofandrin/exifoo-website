@@ -28,9 +28,9 @@ export default function Preview() {
       {/* Toggle Switch */}
       <div className="relative mt-8 w-full sm:mt-0">
         <div className="flex flex-col items-center">
-          <p className="text-neutral-700">
+          <h3 className="text-neutral-700">
             Turn on <span className="font-logo text-lg font-bold text-logo sm:text-xl">exifoo</span>
-          </p>
+          </h3>
           <div className="mt-2 sm:hidden">
             <ToggleSwitch handleToggle={() => setIsToggleOn(!isToggleOn)} />
           </div>

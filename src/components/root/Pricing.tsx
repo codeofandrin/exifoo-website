@@ -64,7 +64,7 @@ function CardTop({ version, price, description, theme }: CardTopPropsType) {
     <div>
       <h2 className={`${versionClasses} sm:text-lg`}>{version}</h2>
       <h1 className={`${priceClasses} mt-3 text-4xl sm:mt-5 sm:text-5xl`}>{price}</h1>
-      <div className={`${descClasses} mt-4 text-sm sm:mt-6 sm:text-base`}>{description}</div>
+      <h3 className={`${descClasses} mt-4 text-sm sm:mt-6 sm:text-base`}>{description}</h3>
       <div className={`${dividerClasses} mb-8 mt-7 h-px sm:mb-10 sm:mt-9`} />
     </div>
   )
@@ -152,15 +152,15 @@ export default function Pricing() {
       <div id="pricing" className="w-full scroll-mt-32 sm:max-w-screen-xl">
         {/* Header */}
         <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
-          <p className="flex flex-col sm:block">
+          <div className="flex flex-col sm:block">
             Pay once. <span className="font-bold text-accent-500">Use forever.</span>
-          </p>
+          </div>
         </h1>
         {/* Description */}
-        <p className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
+        <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
           <span className="font-logo font-bold text-logo">exifoo</span> is a one-time purchase with no
           recurring fees. You can try it out for free, with the demo version.
-        </p>
+        </h2>
         {/* Cards */}
         <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
           {/* Demo */}

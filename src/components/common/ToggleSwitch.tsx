@@ -32,7 +32,13 @@ export default function ToggleSwitch({
 
   return (
     <label className="inline-flex cursor-pointer items-center">
-      <input type="checkbox" value="" className="peer sr-only" onChange={handleToggle} />
+      <input
+        aria-label="Turn on exifoo toggle switch"
+        type="checkbox"
+        value=""
+        className="peer sr-only"
+        onChange={handleToggle}
+      />
       <div className={inputClasses}></div>
       {children}
     </label>

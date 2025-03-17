@@ -85,7 +85,10 @@ export default function Navbar() {
             })}
           </div>
           {/* Mobile Menu Button */}
-          <button className="sm:hidden" onClick={handleToggleMenu}>
+          <button
+            aria-label={`${isToggleOpen ? "Close Navigation Menu" : "Open Navigation Menu"}`}
+            className="sm:hidden"
+            onClick={handleToggleMenu}>
             {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
           </button>
         </div>

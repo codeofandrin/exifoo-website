@@ -36,13 +36,13 @@ export default function Hero() {
             <Image
               src={ImgAppPreview}
               alt="exifoo Preview"
-              className="hidden min-w-[950px] sm:block"
+              className="hidden min-w-[950px] select-none sm:block"
               priority
             />
             <Image
               src={ImgAppPreviewMobile}
               alt="exifoo Preview Mobile"
-              className="block sm:hidden"
+              className="block select-none sm:hidden"
               priority
             />
           </div>

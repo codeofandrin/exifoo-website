@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { EMail } from "@/utils/constants"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
+import ImgLogoLargeMobile from "@/assets/images/exifoo_logo_large_mobile.png"
 
 const productItems = [
   { text: "Download", link: "/download" },
@@ -51,7 +52,12 @@ export default function Footer() {
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="h-12 w-fit select-none transition-[opacity] duration-200 group-hover:opacity-60"
+              className="hidden h-12 w-fit select-none transition-[opacity] duration-200 group-hover:opacity-60 sm:block"
+            />
+            <Image
+              src={ImgLogoLargeMobile}
+              alt={ImgLogoLargeMobile.src}
+              className="h-12 w-fit select-none transition-[opacity] duration-200 group-hover:opacity-60 sm:hidden"
             />
           </Link>
           {/* Copyright */}

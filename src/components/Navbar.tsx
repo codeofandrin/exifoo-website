@@ -7,6 +7,7 @@ import Image from "next/image"
 
 import { useScrollPosition } from "@/hooks/useScrollPosition"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
+import ImgLogoLargeMobile from "@/assets/images/exifoo_logo_large_mobile.png"
 import SVGMenu from "@/assets/icons/Menu.svg"
 import SVGX from "@/assets/icons/X.svg"
 
@@ -68,7 +69,12 @@ export default function Navbar() {
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="w-40 select-none transition-[opacity] duration-200 group-hover:opacity-60"
+              className="hidden w-40 select-none transition-[opacity] duration-200 group-hover:opacity-60 sm:block"
+            />
+            <Image
+              src={ImgLogoLargeMobile}
+              alt={ImgLogoLargeMobile.src}
+              className="w-40 select-none transition-[opacity] duration-200 group-hover:opacity-60 sm:hidden"
             />
           </Link>
           <div className="hidden space-x-8 sm:block">

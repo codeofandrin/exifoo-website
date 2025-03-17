@@ -7,6 +7,7 @@ import DynamicButton from "@/components/download/DynamicButton"
 import Cards from "@/components/download/Cards"
 import { getMacOSDownloadURL } from "@/utils/server/github"
 import ImgAppPreview from "@/assets/images/app_preview_rename_success.png"
+import ImgAppPreviewMobile from "@/assets/images/app_preview_rename_success_mobile.png"
 import SVGApple from "@/assets/icons/Apple.svg"
 
 export const metadata: Metadata = {
@@ -57,7 +58,13 @@ export default async function Download() {
               <Image
                 src={ImgAppPreview}
                 alt="exifoo Preview"
-                className="select-none sm:min-w-[900px]"
+                className="hidden min-w-[900px] select-none sm:block"
+                priority
+              />
+              <Image
+                src={ImgAppPreviewMobile}
+                alt="exifoo Preview Mobile"
+                className="block select-none sm:hidden"
                 priority
               />
             </div>

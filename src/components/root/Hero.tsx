@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import CTAButton from "../common/CTAButton"
 import ImgAppPreview from "@/assets/images/app_preview_hero.png"
+import ImgAppPreviewMobile from "@/assets/images/app_preview_hero_mobile.png"
 
 export default function Hero() {
   return (
@@ -32,7 +33,18 @@ export default function Hero() {
         {/* Preview */}
         <div className="mt-10 sm:relative sm:mt-0 sm:w-1/2">
           <div className="sm:absolute sm:bottom-1/2 sm:left-10 sm:translate-y-1/2 md:left-20">
-            <Image src={ImgAppPreview} alt="exifoo Preview" className="sm:min-w-[950px]" priority />
+            <Image
+              src={ImgAppPreview}
+              alt="exifoo Preview"
+              className="hidden min-w-[950px] sm:block"
+              priority
+            />
+            <Image
+              src={ImgAppPreviewMobile}
+              alt="exifoo Preview Mobile"
+              className="block sm:hidden"
+              priority
+            />
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import Image from "next/image"
 
 import CTAButton from "../common/CTAButton"
 import ImgAppPreview from "@/assets/images/app_preview_hero.png"
-import ImgAppPreviewMobile from "@/assets/images/app_preview_hero_mobile.png"
 
 export default function Hero() {
   return (
@@ -36,13 +35,8 @@ export default function Hero() {
             <Image
               src={ImgAppPreview}
               alt="exifoo Preview"
-              className="hidden min-w-[950px] select-none sm:block"
-              priority
-            />
-            <Image
-              src={ImgAppPreviewMobile}
-              alt="exifoo Preview Mobile"
-              className="block select-none sm:hidden"
+              className="select-none sm:min-w-[950px]"
+              sizes="(max-width: 640px) 500px, 2552px"
               priority
             />
           </div>

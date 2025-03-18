@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Navbar />
         <div className="mt-24 w-full">{children}</div>
         <Footer />
+        <GoogleAnalytics gaId="AW-16876918424" />
         <SpeedInsights />
       </body>
     </html>

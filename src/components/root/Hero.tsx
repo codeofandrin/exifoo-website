@@ -25,7 +25,7 @@ export default function Hero() {
           {/* CTA */}
           <div className="mt-6 sm:mt-10">
             <CTAButton href="/download" className="w-full sm:w-72">
-              Download for free
+              Get started now
             </CTAButton>
           </div>
         </div>

@@ -118,7 +118,7 @@ function CardButton({ theme }: CardButtonPropsType) {
   if (theme === "primary") {
     btn = (
       <CTAButton href={Checkout.checkoutURL} target="_blank" className="w-full text-sm sm:text-base">
-        Get a license
+        Buy a license
       </CTAButton>
     )
   } else if (theme === "accent") {
@@ -128,7 +128,7 @@ function CardButton({ theme }: CardButtonPropsType) {
         color="silent"
         href="/download"
         size="2xl">
-        <p className="text-sm sm:text-base">Start for free</p>
+        <p className="text-sm sm:text-base">Start your trial</p>
       </Button>
     )
   }

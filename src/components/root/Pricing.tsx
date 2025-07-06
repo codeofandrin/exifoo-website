@@ -118,7 +118,7 @@ function CardButton({ theme }: CardButtonPropsType) {
   if (theme === "primary") {
     btn = (
       <CTAButton href={Checkout.checkoutURL} target="_blank" className="w-full text-sm sm:text-base">
-        Buy a license
+        Get a license
       </CTAButton>
     )
   } else if (theme === "accent") {
@@ -153,18 +153,18 @@ export default function Pricing() {
         {/* Header */}
         <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
           <div className="flex flex-col sm:block">
-            Pay once. <span className="font-bold text-accent-500">Use forever.</span>
+            Free forever. <span className="font-bold text-accent-500">Use forever.</span>
           </div>
         </h1>
         {/* Description */}
         <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
-          <span className="font-logo font-bold text-logo">exifoo</span> is a one-time purchase with no
-          recurring fees. You can try it out for free, with the demo version.
+          <span className="font-logo font-bold text-logo">exifoo</span> is a free and open-source app without
+          any fees. Get a license key for free to get started!
         </h2>
         {/* Cards */}
         <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
           {/* Demo */}
-          <Card theme="accent" first>
+          {/* <Card theme="accent" first>
             <CardTop
               theme="accent"
               version="Demo Version"
@@ -178,7 +178,7 @@ export default function Pricing() {
             />
             <CardFeatures theme="accent" features={demoFeatures} />
             <CardButton theme="accent" />
-          </Card>
+          </Card> */}
           {/* License */}
           <Card theme="primary">
             <CardTop
@@ -186,7 +186,7 @@ export default function Pricing() {
               version="Full Version"
               price={
                 <>
-                  $9.99 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
+                  $0 <span className="font-base ml-1 text-xs font-normal sm:text-base">/lifetime</span>
                 </>
               }
               description={

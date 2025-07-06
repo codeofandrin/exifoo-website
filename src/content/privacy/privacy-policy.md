@@ -1,7 +1,7 @@
 # Privacy Policy
 
 This Privacy Policy explains the type, scope, and purpose of the collection and use of personal data
-on our website exifoo.com ("Website") by exifoo ("we", "us"). It also provides information about
+on our website exifoo.vercel.app ("Website") by exifoo ("we", "us"). It also provides information about
 your rights. These rights are based on the EU General Data Protection Regulation ("GDPR"),
 the Swiss Federal Act on Data Protection (“FADP”), and the revised Swiss Federal Act on
 Data Protection ("revFADP").
@@ -161,4 +161,4 @@ as a user to regularly review our Privacy Policy for updates to stay informed ab
 
 <div class="spacer"></div>
 
-The current Privacy Policy can be accessed at [https://exifoo.com/privacy](https://exifoo.com/privacy).
+The current Privacy Policy can be accessed at [https://exifoo.vercel.app/privacy](https://exifoo.vercel.app/privacy).

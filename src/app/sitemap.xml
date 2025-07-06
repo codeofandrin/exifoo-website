@@ -1,11 +1,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://exifoo.com</loc>
+    <loc>https://exifoo.vercel.app</loc>
   </url>
   <url>
-    <loc>https://exifoo.com/download</loc>
+    <loc>https://exifoo.vercel.app/download</loc>
   </url>
   <url>
-    <loc>https://exifoo.com/release-notes</loc>
+    <loc>https://exifoo.vercel.app/release-notes</loc>
   </url>
 </urlset>

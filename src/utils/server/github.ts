@@ -7,7 +7,7 @@ async function request(method: string, url: string): Promise<Record<any, any> | 
         Accept: "application/vnd.github+json",
         Authorization: `Bearer ${process.env.GH_TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28",
-        "User-Agent": "exifoo (exifoo.com)"
+        "User-Agent": "exifoo (exifoo.vercel.app)"
     }
 
     const data = await fetch(`${API_BASE_URL}${url}`, { method, headers, cache: "no-store" })

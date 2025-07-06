@@ -5,12 +5,16 @@ import ImgAppPreview from "@/assets/images/app_preview_hero.png"
 
 export default function Hero() {
   return (
-    <div className="mt-14 w-full px-7 sm:mt-60 sm:max-w-screen-xl">
+    <div className="mt-14 w-full px-7 sm:mt-44 sm:max-w-screen-xl">
       <div className="sm:flex">
         <div className="sm:w-1/2">
+          <div className="flex w-fit items-center rounded-full bg-primary-50 py-2 pl-2 pr-3 text-sm font-medium text-primary-700 shadow-sm ring-1 ring-inset ring-primary-700/10">
+            <div className="rounded-full bg-primary-500 px-2 py-0.5 text-white">NEW</div>
+            <div className="ml-3">Free to use and open source 🚀</div>
+          </div>
           {/* Heading */}
-          <div className="flex flex-col font-logo text-4xl font-bold tracking-tight text-neutral-800 sm:text-6xl">
-            <h1>
+          <div className="mt-12 flex flex-col">
+            <h1 className="font-logo text-4xl font-bold tracking-tight text-neutral-800 sm:text-6xl">
               <p>Shoot more.</p>
               <p className="text-accent-500">Organize less.</p>
             </h1>

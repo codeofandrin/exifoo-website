@@ -9,7 +9,9 @@ The website of exifoo, a tool to keep your photos organized by adding the date a
 
 Built with Next.js, TypeScript, and TailwindCSS.
 
-<p>Visit: <a href="https://exifoo.vercel.app" target="_blank">exifoo.vercel.app</a></p>
+Visit: [exifoo.vercel.app](https://exifoo.vercel.app)
+<br>
+App Repository: [codeofandrin/exifoo](https://github.com/codeofandrin/exifoo)
 
 <br>
 

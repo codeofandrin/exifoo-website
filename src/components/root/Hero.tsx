@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import CTAButton from "../common/CTAButton"
+import ExternalLink from "../common/ExternalLink"
 import ImgAppPreview from "@/assets/images/app_preview_hero.png"
 
 export default function Hero() {
@@ -10,7 +11,13 @@ export default function Hero() {
         <div className="sm:w-1/2">
           <div className="flex w-fit items-center rounded-full bg-primary-50 py-2 pl-2 pr-3 text-sm font-medium text-primary-700 shadow-sm ring-1 ring-inset ring-primary-700/10">
             <div className="rounded-full bg-primary-500 px-2 py-0.5 text-white">NEW</div>
-            <div className="ml-3">Free to use and open source 🚀</div>
+            <div className="ml-3">
+              Free to use and{" "}
+              <ExternalLink href="https://github.com/codeofandrin/exifoo" color="underline">
+                open source
+              </ExternalLink>{" "}
+              🚀
+            </div>
           </div>
           {/* Heading */}
           <div className="mt-12 flex flex-col">

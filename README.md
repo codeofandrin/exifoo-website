@@ -47,7 +47,7 @@ npm start
 
 ## Environment Variables
 
-This project uses environment variables for configuration. To set up your environment, copy 
+This project uses environment variables for configuration. To set up your environment, copy
 [`.env.example`](.env.example) to `.env` in the root directory and adjust values as needed.
 
 ## Project Structure
@@ -62,7 +62,7 @@ This project uses environment variables for configuration. To set up your enviro
 
 ## Copyright
 
-Copyright (c) codeofandrin 
+Copyright (c) codeofandrin
 
 This source code is licensed under the MIT license found in the
 [LICENSE](LICENSE) file in the root directory of this source tree.

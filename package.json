@@ -1,7 +1,7 @@
 {
   "name": "exifoo-website",
   "version": "0.10.0",
-  "description": "The website of exifoo, a tool to organize your photos.",
+  "description": "The website of exifoo, a tool to organize your photos and videos.",
   "author": {
     "name": "Andrin Schaller",
     "url": "https://github.com/codeofandrin"

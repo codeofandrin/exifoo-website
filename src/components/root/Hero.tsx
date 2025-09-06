@@ -29,8 +29,8 @@ export default function Hero() {
           {/* Description */}
           <div className="mt-6 sm:mt-10">
             <h2 className="text-neutral-500 sm:text-lg">
-              <span className="font-logo font-medium text-logo">exifoo</span> helps you keep your photos
-              organized by adding the date and time of capture to the filename.
+              <span className="font-logo font-medium text-logo">exifoo</span> helps you keep your photos and
+              videos organized by adding the date and time of capture to the filename.
             </h2>
           </div>
           {/* CTA */}

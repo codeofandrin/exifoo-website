@@ -142,7 +142,7 @@ export default function Pricing() {
     { text: "Clean and modern design", active: true },
     { text: "Lifetime updates", active: true },
     { text: "Premium support", active: true },
-    { text: "Unlimited photos", active: true }
+    { text: "Unlimited files", active: true }
   ]
   const demoFeatures = structuredClone(licenseFeatures)
   demoFeatures[4].active = false

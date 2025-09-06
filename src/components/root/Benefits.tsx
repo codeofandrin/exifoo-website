@@ -129,7 +129,7 @@ export default function Benefits() {
           </CardIcon>
           <CardTitle>Privacy first.</CardTitle>
           <CardDescription>
-            Our tool processes all your photos offline directly on your device, so you never have to let them
+            Our tool processes all your files offline directly on your device, so you never have to let them
             out of your hands. Isn't that great?
           </CardDescription>
         </Card>

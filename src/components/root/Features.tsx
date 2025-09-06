@@ -81,7 +81,7 @@ export default function Features() {
               <FeatureTitle>Flexible file naming</FeatureTitle>
               <FeatureDescription>
                 Customize filenames to your needs. Choose the year and time format and add custom text to
-                recognize photos even better.
+                recognize files even better.
               </FeatureDescription>
             </div>
           </FeatureContainer>
@@ -98,7 +98,7 @@ export default function Features() {
               <FeatureTitle>Live Preview</FeatureTitle>
               <FeatureDescription>
                 See your customization in action with a real-time example. Instantly preview how your
-                filenames will look before renaming your photos.
+                filenames will look before renaming your photos and videos.
               </FeatureDescription>
             </div>
           </FeatureContainer>

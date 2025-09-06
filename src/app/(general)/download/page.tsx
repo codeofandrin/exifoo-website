@@ -12,7 +12,7 @@ import SVGApple from "@/assets/icons/Apple.svg"
 export const metadata: Metadata = {
   title: "Download exifoo",
   description:
-    "exifoo helps you keep your photos organized by adding the date and time from EXIF data to the filename."
+    "exifoo helps you keep your photos and videos organized by adding the date and time from EXIF data to the filename."
 }
 
 export default async function Download() {
@@ -30,7 +30,7 @@ export default async function Download() {
             <h2 className="mt-3 text-neutral-600 sm:mt-6 sm:text-lg">
               Shoot more. Organize less. With{" "}
               <span className="font-logo text-xl font-semibold tracking-tight text-logo">exifoo</span> you can
-              keep your photos organized.
+              keep your photos and videos organized.
             </h2>
             <div className="mt-8 sm:mt-12">
               <div className="lg:flex lg:items-center">

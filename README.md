@@ -5,7 +5,7 @@
 
 ---
 
-The website of exifoo, a tool to keep your photos organized by adding the date and time of capture to the filename.
+The website of exifoo, a tool to keep your photos and videos organized by adding the date and time of capture to the filename.
 
 Built with Next.js, TypeScript, and TailwindCSS.
 

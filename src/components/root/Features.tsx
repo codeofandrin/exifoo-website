@@ -4,6 +4,7 @@ import ImgFilenamesSelect from "@/assets/images/app_filenames_select.png"
 import ImgRenameOptions from "@/assets/images/app_options.png"
 import ImgExampleOutput from "@/assets/images/app_example_output.png"
 import ImgStatusReport from "@/assets/images/app_status_report.png"
+import ImgRenameHistory from "@/assets/images/app_rename_history.png"
 
 interface FeatureTitlePropsType {
   children: string
@@ -116,6 +117,21 @@ export default function Features() {
               <FeatureDescription>
                 Get a detailed status report after every renaming process, showing the number of successful
                 and failed renames.
+              </FeatureDescription>
+            </div>
+          </FeatureContainer>
+          {/* Rename History */}
+          <FeatureContainer first>
+            <Image
+              src={ImgRenameHistory}
+              alt="app_rename_history"
+              className="select-none rounded-[4.5px] shadow-apple md:max-w-sm lg:max-w-xl"
+            />
+            <div className="flex flex-col md:ml-14 md:max-w-lg lg:ml-24">
+              <FeatureTitle>Rename History</FeatureTitle>
+              <FeatureDescription>
+                Browse through a complete list of your past rename processes. And if needed, revert any file
+                back to its original name with just one click.
               </FeatureDescription>
             </div>
           </FeatureContainer>

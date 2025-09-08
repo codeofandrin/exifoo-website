@@ -144,11 +144,11 @@ export default function Pricing() {
     { text: "No registration required", active: true },
     { text: "Clean and modern design", active: true },
     { text: "Lifetime updates", active: true },
-    { text: "Premium support", active: true },
+    // { text: "Premium support", active: true },
     { text: "Unlimited files", active: true }
   ]
-  const demoFeatures = structuredClone(licenseFeatures)
-  demoFeatures[4].active = false
+  // const demoFeatures = structuredClone(licenseFeatures)
+  // demoFeatures[4].active = false
 
   return (
     <div className="mt-52 flex w-full flex-col items-center bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">

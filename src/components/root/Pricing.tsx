@@ -18,7 +18,7 @@ function Card({ children, theme, first = false }: CardPropsType) {
     cardClasses = "bg-neutral-800 shadow-apple"
     card = (
       <div
-        className={`${cardClasses} ${!first && "mt-14 md:ml-14 md:mt-0 lg:ml-24"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
+        className={`${cardClasses} ${!first && "mt-14 md:mt-0"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
         <div className="absolute inset-0 bg-[radial-gradient(70%_200px_at_50%_0%,theme(backgroundColor.white/10%),transparent)]" />
         {children}
       </div>

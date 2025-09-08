@@ -1,8 +1,11 @@
+import Image from "next/image"
+
 import Button from "../common/Button"
 import CTAButton from "../common/CTAButton"
-import { Checkout } from "@/utils/constants"
+import { Checkout, GeneralLinks } from "@/utils/constants"
 import SVGCheck from "@/assets/icons/Check.svg"
 import SVGX from "@/assets/icons/X.svg"
+import ImgBMCLogo from "@/assets/images/bmc_logo.png"
 
 interface CardPropsType {
   className?: string
@@ -161,8 +164,19 @@ export default function Pricing() {
           <span className="font-logo font-bold text-logo">exifoo</span> is a free and open-source app without
           any fees. Get a license key for free to get started!
         </h2>
+        <div className="mt-20 flex w-full justify-center">
+          <Button
+            href={GeneralLinks.buyMeACoffeeURL}
+            target="_blank"
+            className="w-full rounded-full border-[#b39b03] bg-[#ffdd04] font-bold sm:w-72 sm:max-w-md">
+            <div className="flex items-center">
+              <Image src={ImgBMCLogo} alt="BMC Logo" className="w-8 select-none" />
+              <p className="ml-2 text-sm text-neutral-900 sm:text-base">Buy me a coffee</p>
+            </div>
+          </Button>
+        </div>
         {/* Cards */}
-        <div className="mt-16 flex flex-col items-center sm:mt-28 md:flex-row md:justify-center">
+        <div className="flex flex-col items-center sm:mt-10 md:flex-row md:justify-center">
           {/* Demo */}
           {/* <Card theme="accent" first>
             <CardTop

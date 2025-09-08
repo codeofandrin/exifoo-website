@@ -9,3 +9,7 @@ export class Checkout {
     static checkoutID = process.env.LEMSQZY_CHECKOUT_ID
     static checkoutURL = `${this.storeURL}/buy/${this.checkoutID}`
 }
+
+export class GeneralLinks {
+    static buyMeACoffeeURL = "https://buymeacoffee.com/andrin.software"
+}

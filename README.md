@@ -7,11 +7,17 @@
 
 The website of exifoo, a tool to keep your photos and videos organized by adding the date and time of capture to the filename.
 
-Built with Next.js, TypeScript, and TailwindCSS.
-
 Visit: [exifoo.vercel.app](https://exifoo.vercel.app)
 <br>
 App Repository: [codeofandrin/exifoo](https://github.com/codeofandrin/exifoo)
+
+<br>
+
+## Tech Stack
+- NextJS
+- TypeScript
+- Flowbite
+- TailwindCSS + Framer Motion
 
 <br>
 

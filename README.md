@@ -14,6 +14,7 @@ App Repository: [codeofandrin/exifoo](https://github.com/codeofandrin/exifoo)
 <br>
 
 ## Tech Stack
+
 - NextJS
 - TypeScript
 - Flowbite

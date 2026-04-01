@@ -36,17 +36,22 @@ export default async function ReleaseNotes() {
               </div>
               {/* Desktop view */}
               <div className="mt-5 hidden sm:flex">
-                <div className="flex flex-col items-center">
+                <div className="">
                   <p className="text-sm font-medium text-primary-400">{date}</p>
-                  <div className="mt-5 h-full w-px bg-primary-200"></div>
-                  {isLast && (
-                    <div className="rounded-full border border-primary-200 p-1">
-                      <div className="rounded-full bg-primary-200 p-[1.5px]"></div>
+                  <div className="flex py-5">
+                    {/* mx-10 - p-1 - p-[1.5px] = 34.5px */}
+                    <div className={`${isLast ? "mx-[34.5px]" : "mx-10"} mx-10 flex flex-col items-center`}>
+                      <div className="h-full w-px bg-primary-200"></div>
+                      {isLast && (
+                        <div className="rounded-full border border-primary-200 p-1">
+                          <div className="rounded-full bg-primary-200 p-[1.5px]"></div>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-                <div className="mt-8 pb-9">
-                  <MarkdownContent>{content}</MarkdownContent>
+                    <div className="mt-8 pb-9">
+                      <MarkdownContent>{content}</MarkdownContent>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

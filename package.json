@@ -23,7 +23,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "flowbite-react": "^0.10.2",
     "framer-motion": "^11.15.0",
-    "next": "15.3.8",
+    "next": "^15.5.14",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "raw-loader": "^4.0.2",

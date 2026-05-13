@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://exifoo.vercel.app" target="_blank"><img src="src/assets/images/exifoo_logo_large.png" width="300px"></a>
+    <a href="https://exifoo.andrin.software" target="_blank"><img src="src/assets/images/exifoo_logo_large.png" width="300px"></a>
     <h3 align="center">Shoot more. Organize less.</h3>
 </p>
 
@@ -7,7 +7,7 @@
 
 The website of exifoo, a tool to keep your photos and videos organized by adding the date and time of capture to the filename.
 
-Visit: [exifoo.vercel.app](https://exifoo.vercel.app)
+Visit: [exifoo.andrin.software](https://exifoo.andrin.software)
 <br>
 App Repository: [codeofandrin/exifoo](https://github.com/codeofandrin/exifoo)
 

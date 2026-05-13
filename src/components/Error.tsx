@@ -3,15 +3,18 @@
 import Image from "next/image"
 
 import Button from "@/components/common/Button"
-import { EMail } from "@/utils/constants"
+import { EmailObfuscated } from "@/utils/constants"
 import ImgErrorIllus from "@/assets/images/error_illus.png"
 import SVGRotateCCW from "@/assets/icons/RotateCCW.svg"
+import { useObfuscatedEmail } from "@/hooks/useObfuscatedEmail"
 
 interface ErrorPropsType {
   reset: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export default function Error({ reset }: ErrorPropsType) {
+  const { href, reveal } = useObfuscatedEmail(EmailObfuscated.help)
+
   return (
     <div className="flex h-screen w-full flex-col items-center px-7">
       <div className="h-1/2 justify-start">
@@ -30,7 +33,13 @@ export default function Error({ reset }: ErrorPropsType) {
       </div>
       <div className="h-1/2 justify-end">
         <div className="mt-8 flex w-full flex-col justify-center sm:mt-14 sm:flex-row">
-          <Button color="accent" className="mt-3 w-full sm:mt-0 sm:w-40" href={`mailto:${EMail.help}`}>
+          <Button
+            color="accent"
+            className="mt-3 w-full sm:mt-0 sm:w-40"
+            href={href}
+            onMouseEnter={reveal}
+            onFocus={reveal}
+            onClick={reveal}>
             <div className="flex items-center">
               <p className="ml-2">Contact Support</p>
             </div>

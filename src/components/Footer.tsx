@@ -1,16 +1,22 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 
-import { EMail } from "@/utils/constants"
+import { EmailObfuscated } from "@/utils/constants"
 import ImgLogoLarge from "@/assets/images/exifoo_logo_large.png"
+import { useObfuscatedEmail } from "@/hooks/useObfuscatedEmail"
 
 const productItems = [
   { text: "Download", link: "/download" },
   { text: "Features", link: "/#features" },
   { text: "Release Notes", link: "/release-notes" },
-  { text: "Pricing", link: "/#pricing" },
-  { text: "Feedback", link: `mailto:${EMail.feedback}` },
-  { text: "Support", link: `mailto:${EMail.help}` }
+  { text: "Pricing", link: "/#pricing" }
+]
+
+const emailItems = [
+  { text: "Feedback", encodedEmail: EmailObfuscated.feedback },
+  { text: "Support", encodedEmail: EmailObfuscated.help }
 ]
 
 const legalItems = [
@@ -21,9 +27,33 @@ const legalItems = [
 interface LinksPropsType {
   title: string
   items: { text: string; link: string }[]
+  emailItems?: { text: string; encodedEmail: string }[]
 }
 
-function Links({ title, items }: LinksPropsType) {
+function EmailLink({
+  text,
+  encodedEmail,
+  className
+}: {
+  text: string
+  encodedEmail: string
+  className?: string
+}) {
+  const { href, reveal } = useObfuscatedEmail(encodedEmail)
+
+  return (
+    <Link
+      href={href}
+      onMouseEnter={reveal}
+      onFocus={reveal}
+      onClick={reveal}
+      className={`${className} text-neutral-500 transition-[opacity] duration-200 hover:opacity-60`}>
+      {text}
+    </Link>
+  )
+}
+
+function Links({ title, items, emailItems }: LinksPropsType) {
   return (
     <div>
       <h1 className="font-semibold text-neutral-700">{title}</h1>
@@ -35,6 +65,14 @@ function Links({ title, items }: LinksPropsType) {
             className={`${i !== 0 && "mt-4 sm:mt-5"} text-neutral-500 transition-[opacity] duration-200 hover:opacity-60`}>
             {text}
           </Link>
+        ))}
+        {emailItems?.map(({ text, encodedEmail }, i) => (
+          <EmailLink
+            key={`footer-${title}-email-${i}`}
+            text={text}
+            encodedEmail={encodedEmail}
+            className="mt-4 sm:mt-5"
+          />
         ))}
       </div>
     </div>
@@ -65,7 +103,7 @@ export default function Footer() {
       {/* Links */}
       <div className="mt-14 grid grid-cols-2 sm:w-1/2 sm:justify-end">
         {/* Product */}
-        <Links title="Product" items={productItems} />
+        <Links title="Product" items={productItems} emailItems={emailItems} />
         {/* Legal */}
         <Links title="Legal" items={legalItems} />
       </div>

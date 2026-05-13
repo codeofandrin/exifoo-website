@@ -1,5 +1,8 @@
+"use client"
+
 import ExternalLink from "../common/ExternalLink"
-import { EMail } from "@/utils/constants"
+import { EmailObfuscated } from "@/utils/constants"
+import { useObfuscatedEmail } from "@/hooks/useObfuscatedEmail"
 
 interface CardPropsType {
   className?: string
@@ -31,6 +34,22 @@ function CardDescription({ children }: CardDescriptionPropsType) {
   return <div className="mt-2 text-neutral-600 sm:mt-3">{children}</div>
 }
 
+function ObfuscatedEmailLink({ encodedEmail }: { encodedEmail: string }) {
+  const { href, label, reveal, isRevealed } = useObfuscatedEmail(encodedEmail)
+
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (!isRevealed) {
+      reveal(e)
+    }
+  }
+
+  return (
+    <ExternalLink href={href} onClick={handleClick} className={!isRevealed ? "italic" : undefined}>
+      {isRevealed ? label : "[click to reveal]"}
+    </ExternalLink>
+  )
+}
+
 export default function Cards() {
   return (
     <div className="mt-32 flex w-full flex-col gap-5 pb-10 sm:mt-80 sm:flex-row sm:flex-wrap sm:gap-10 md:justify-center lg:flex-nowrap">
@@ -40,8 +59,8 @@ export default function Cards() {
           <p>Unfortunately we currently only support macOS.</p>
           <p className="mt-3">
             If you are on Windows or Linux, please contact us at{" "}
-            <ExternalLink href={`mailto:${EMail.feedback}`}>{EMail.feedback}</ExternalLink>. This will help us
-            prioritize the feature if there's strong demand from users.
+            <ObfuscatedEmailLink encodedEmail={EmailObfuscated.feedback} />. This will help us prioritize the
+            feature if there's strong demand from users.
           </p>
         </CardDescription>
       </Card>
@@ -49,8 +68,7 @@ export default function Cards() {
         <CardTitle>Found a bug or missing a feature?</CardTitle>
         <CardDescription>
           <>
-            Please contact us at{" "}
-            <ExternalLink href={`mailto:${EMail.feedback}`}>{EMail.feedback}</ExternalLink> with detailed
+            Please contact us at <ObfuscatedEmailLink encodedEmail={EmailObfuscated.feedback} /> with detailed
             information about the bug or feature request.
           </>
         </CardDescription>
@@ -63,8 +81,8 @@ export default function Cards() {
             <span className="font-logo font-semibold tracking-tight text-logo">exifoo</span>?
           </p>
           <p className="mt-2">
-            Feel free to contact us at <ExternalLink href={`mailto:${EMail.help}`}>{EMail.help}</ExternalLink>{" "}
-            — we're happy to help!
+            Feel free to contact us at <ObfuscatedEmailLink encodedEmail={EmailObfuscated.help} /> — we're
+            happy to help!
           </p>
         </CardDescription>
       </Card>

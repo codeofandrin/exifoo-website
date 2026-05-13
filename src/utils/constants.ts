@@ -1,7 +1,8 @@
-export class EMail {
-    static feedback = "mail@andrin.software"
-    static help = "mail@andrin.software"
-    static info = "mail@andrin.software"
+export class EmailObfuscated {
+    // base64 encoded (2x)
+    static feedback = "YldGcGJFQmhibVJ5YVc0dWMyOW1kSGRoY21VPQ=="
+    static help = "YldGcGJFQmhibVJ5YVc0dWMyOW1kSGRoY21VPQ=="
+    static info = "YldGcGJFQmhibVJ5YVc0dWMyOW1kSGRoY21VPQ=="
 }
 
 export class Checkout {

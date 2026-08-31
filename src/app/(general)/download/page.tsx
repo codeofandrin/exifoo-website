@@ -37,9 +37,7 @@ export default async function Download() {
                 <DynamicButton
                   downloadURLMacOS={{ arm64: downloadURLMacOSArm64, x64: downloadURLMacOSX64 }}
                 />
-                <p className="mt-3 text-sm text-neutral-600 lg:mt-0 lg:ml-5">
-                  macOS 10.15 (Catalina) or higher
-                </p>
+                <p className="mt-3 text-sm text-neutral-600 lg:mt-0 lg:ml-5">macOS 11 (Big Sur) or higher</p>
               </div>
               <div className="mt-3">
                 <Link className="text-xs text-neutral-400 underline" href="/release-notes">

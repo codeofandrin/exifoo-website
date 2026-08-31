@@ -2,7 +2,12 @@ import "server-only"
 
 import { neon } from "@neondatabase/serverless"
 
-const sql = neon(process.env.NEON_DATABASE_URL!)
+function getSql() {
+  if (!process.env.NEON_DATABASE_URL) {
+    throw new Error("NEON_DATABASE_URL is not set")
+  }
+  return neon(process.env.NEON_DATABASE_URL)
+}
 
 export interface FeedbackDataType {
   licenseKeyId: string
@@ -49,6 +54,7 @@ export async function insertFeedback({
   testimonialConsent,
   name
 }: FeedbackInsertDataType): Promise<void> {
+  const sql = getSql()
   await sql`
         INSERT INTO feedback (
             license_key_id, user_name, user_email,
@@ -65,11 +71,13 @@ export async function insertFeedback({
 }
 
 export async function getFeedbackIds(): Promise<string[]> {
+  const sql = getSql()
   const rows = await sql`SELECT license_key_id AS "licenseKeyId" FROM feedback`
   return (rows as { licenseKeyId: string }[]).map((row) => row.licenseKeyId)
 }
 
 export async function getAllFeedbacks(): Promise<FeedbackDataType[]> {
+  const sql = getSql()
   const feedbacks = await sql`
     SELECT
         license_key_id AS "licenseKeyId", user_name AS "userName", user_email AS "userEmail",

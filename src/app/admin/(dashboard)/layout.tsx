@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { AdminSidebar } from "@/components/admin/AdminSidebar"
 import { DashboardBreadcrumb } from "@/components/admin/DashboardBreadcrumb"
 // import { DUMMY_FEEDBACKS } from "@/components/admin/feedback/dummy-feedbacks"

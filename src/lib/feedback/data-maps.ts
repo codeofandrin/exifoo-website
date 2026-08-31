@@ -36,16 +36,3 @@ export const FAIR_PRICE_OPTIONS = [
   { value: "30_one_time", label: "$30" },
   { value: "no_pay", label: "I wouldn't pay for a Pro version" }
 ]
-
-export const TESTIMONIAL_CONSENT_OPTIONS = [
-  { value: "yes_name", label: "Yes, with my name" },
-  { value: "yes_anon", label: "Yes, but anonymously" },
-  { value: "no", label: "No" }
-]
-
-// Order must match TESTIMONIAL_CONSENT_OPTIONS so slice colors and legend rows line up
-export const TESTIMONIAL_CONSENT_COLORS: Record<string, string> = {
-  yes_name: "var(--chart-positive-1)",
-  yes_anon: "var(--chart-positive-2)",
-  no: "var(--chart-negative)"
-}

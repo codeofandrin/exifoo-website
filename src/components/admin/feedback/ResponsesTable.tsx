@@ -22,21 +22,14 @@ import { useFeedbackReadState } from "@/hooks/use-feedback-read-state"
 import FeedbackDetailsDialog from "@/components/admin/feedback/FeedbackDetailsDialog"
 import { FacetedFilter } from "@/components/admin/feedback/FacetedFilter"
 import { cn } from "@/lib/utils"
-import {
-  USAGE_FREQUENCY_OPTIONS,
-  PRO_FEATURES_OPTIONS,
-  FAIR_PRICE_OPTIONS,
-  TESTIMONIAL_CONSENT_OPTIONS,
-  TESTIMONIAL_CONSENT_COLORS
-} from "@/lib/feedback/data-maps"
+import { USAGE_FREQUENCY_OPTIONS, PRO_FEATURES_OPTIONS, FAIR_PRICE_OPTIONS } from "@/lib/feedback/data-maps"
 
-type FacetKey = "usageFrequency" | "proFeatures" | "fairPrice" | "testimonialConsent"
+type FacetKey = "usageFrequency" | "proFeatures" | "fairPrice"
 
 const FACET_FILTERS: { key: FacetKey; label: string; options: { value: string; label: string }[] }[] = [
   { key: "usageFrequency", label: "Usage Frequency", options: USAGE_FREQUENCY_OPTIONS },
   { key: "proFeatures", label: "Pro Features", options: PRO_FEATURES_OPTIONS },
-  { key: "fairPrice", label: "Fair Price", options: FAIR_PRICE_OPTIONS },
-  { key: "testimonialConsent", label: "Testimonial Consent", options: TESTIMONIAL_CONSENT_OPTIONS }
+  { key: "fairPrice", label: "Fair Price", options: FAIR_PRICE_OPTIONS }
 ]
 
 type FacetState = Record<FacetKey, Set<string>>
@@ -44,8 +37,7 @@ type FacetState = Record<FacetKey, Set<string>>
 const EMPTY_FACETS: FacetState = {
   usageFrequency: new Set(),
   proFeatures: new Set(),
-  fairPrice: new Set(),
-  testimonialConsent: new Set()
+  fairPrice: new Set()
 }
 
 // A feedback matches a facet when nothing is selected, or when its value (any of
@@ -56,7 +48,7 @@ function matchesFacet(feedback: FeedbackDataType, key: FacetKey, selected: Set<s
   return selected.has(feedback[key] as string)
 }
 
-type SortKey = "name" | "email" | "usageFrequency" | "fairPrice" | "testimonialConsent" | "createdAt"
+type SortKey = "name" | "email" | "usageFrequency" | "fairPrice" | "createdAt"
 type SortDirection = "asc" | "desc"
 
 const PAGE_SIZE_OPTIONS = [10, 20, 50]
@@ -70,11 +62,10 @@ function optionIndex(options: { value: string }[], value: string): number {
 
 const SORT_ACCESSORS: Record<SortKey, (feedback: FeedbackDataType) => string | number> = {
   createdAt: (feedback) => feedback.createdAt.getTime(),
-  name: (feedback) => (feedback.name ?? feedback.userName ?? "").toLowerCase(),
+  name: (feedback) => (feedback.userName ?? "").toLowerCase(),
   email: (feedback) => (feedback.userEmail ?? "").toLowerCase(),
   usageFrequency: (feedback) => optionIndex(USAGE_FREQUENCY_OPTIONS, feedback.usageFrequency),
-  fairPrice: (feedback) => optionIndex(FAIR_PRICE_OPTIONS, feedback.fairPrice),
-  testimonialConsent: (feedback) => optionIndex(TESTIMONIAL_CONSENT_OPTIONS, feedback.testimonialConsent)
+  fairPrice: (feedback) => optionIndex(FAIR_PRICE_OPTIONS, feedback.fairPrice)
 }
 
 type SortIconComponent = React.ComponentType<{ className?: string }>
@@ -87,8 +78,7 @@ const SORT_ICONS: Record<
   name: { neutral: ArrowUpDown, asc: ArrowDownAZ, desc: ArrowUpAZ },
   email: { neutral: ArrowUpDown, asc: ArrowDownAZ, desc: ArrowUpAZ },
   usageFrequency: { neutral: ArrowUpDown, asc: ArrowUp, desc: ArrowDown },
-  fairPrice: { neutral: ArrowUpDown, asc: ArrowDown01, desc: ArrowUp01 },
-  testimonialConsent: { neutral: ArrowUpDown, asc: ArrowUp, desc: ArrowDown }
+  fairPrice: { neutral: ArrowUpDown, asc: ArrowDown01, desc: ArrowUp01 }
 }
 
 export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataType[] }) {
@@ -136,7 +126,7 @@ export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataT
     if (!query) return feedbacks
 
     return feedbacks.filter((feedback) => {
-      const name = (feedback.name ?? feedback.userName ?? "").toLowerCase()
+      const name = (feedback.userName ?? "").toLowerCase()
       const email = (feedback.userEmail ?? "").toLowerCase()
       return name.includes(query) || email.includes(query)
     })
@@ -254,11 +244,9 @@ export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataT
                 {sortableHead("name", "Name")}
                 {sortableHead("email", "E-Mail")}
                 {sortableHead("usageFrequency", "Usage Frequency")}
-                <TableHead>Likes</TableHead>
                 <TableHead>Missing or Inconvenient</TableHead>
                 <TableHead>Pro Features</TableHead>
                 {sortableHead("fairPrice", "Fair Price")}
-                {sortableHead("testimonialConsent", "Testimonial Consent")}
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -274,11 +262,6 @@ export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataT
                   )
                   const fairPriceLabel = FAIR_PRICE_OPTIONS.filter((f) => f.value === feedback.fairPrice)[0]
                     .label
-                  const testimonialMap = TESTIMONIAL_CONSENT_OPTIONS.filter(
-                    (f) => f.value === feedback.testimonialConsent
-                  )[0]
-                  const testimonialLabel = testimonialMap.label
-                  const testimonialColor = TESTIMONIAL_CONSENT_COLORS[testimonialMap.value]
 
                   return (
                     <TableRow
@@ -301,16 +284,17 @@ export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataT
                           }).format(feedback.createdAt)}
                         </span>
                       </TableCell>
-                      <TableCell>{feedback.name ?? feedback.userName}</TableCell>
+                      <TableCell>{feedback.userName}</TableCell>
                       <TableCell>{feedback.userEmail}</TableCell>
                       <TableCell>
                         <Badge className="bg-(--chart-1)/20 text-[color-mix(in_oklch,var(--chart-1),black_35%)]">
                           {usageFrequencyLabel}
                         </Badge>
                       </TableCell>
-                      <TableCell className="max-w-64 truncate whitespace-normal">{feedback.likes}</TableCell>
                       <TableCell className="max-w-64 truncate whitespace-normal">
-                        {feedback.missingOrInconvenient}
+                        {!feedback.missingOrInconvenient || feedback.missingOrInconvenient === "-"
+                          ? "—"
+                          : feedback.missingOrInconvenient}
                       </TableCell>
                       <TableCell>
                         <div className="flex h-full flex-col justify-center gap-2">
@@ -326,15 +310,6 @@ export default function ResponsesTable({ feedbacks }: { feedbacks: FeedbackDataT
                       <TableCell>
                         <Badge className="bg-(--chart-2)/20 text-[color-mix(in_oklch,var(--chart-2),black_35%)]">
                           {fairPriceLabel}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <Badge
-                          style={{
-                            backgroundColor: `color-mix(in srgb, ${testimonialColor} 40%, transparent)`,
-                            color: `color-mix(in oklch, ${testimonialColor}, black 60%)`
-                          }}>
-                          {testimonialLabel}
                         </Badge>
                       </TableCell>
                     </TableRow>

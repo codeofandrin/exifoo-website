@@ -2,16 +2,9 @@ import { getAllFeedbacks, type FeedbackDataType } from "@/utils/server/neon"
 import ResponsesTable from "@/components/admin/feedback/ResponsesTable"
 import DefaultCard from "@/components/admin/feedback/DefaultCard"
 import BarChartCard from "@/components/admin/feedback/BarChartCard"
-import PieChartCard from "@/components/admin/feedback/PieChartCard"
 // import { DUMMY_FEEDBACKS } from "@/components/admin/feedback/dummy-feedbacks"
 import { type LegendItemData } from "@/components/charts/legend"
-import {
-  USAGE_FREQUENCY_OPTIONS,
-  PRO_FEATURES_OPTIONS,
-  FAIR_PRICE_OPTIONS,
-  TESTIMONIAL_CONSENT_OPTIONS,
-  TESTIMONIAL_CONSENT_COLORS
-} from "@/lib/feedback/data-maps"
+import { USAGE_FREQUENCY_OPTIONS, PRO_FEATURES_OPTIONS, FAIR_PRICE_OPTIONS } from "@/lib/feedback/data-maps"
 
 function getPayForProPercentage(feedbacks: FeedbackDataType[]): number {
   const totalAmount = feedbacks.length
@@ -81,15 +74,6 @@ function getFairPriceData(feedbacks: FeedbackDataType[]): LegendItemData[] {
   }))
 }
 
-function getTestimonialConsentData(feedbacks: FeedbackDataType[]): LegendItemData[] {
-  return TESTIMONIAL_CONSENT_OPTIONS.map(({ value, label }) => ({
-    label,
-    value: feedbacks.filter((f) => f.testimonialConsent === value).length,
-    maxValue: feedbacks.length,
-    color: TESTIMONIAL_CONSENT_COLORS[value]
-  }))
-}
-
 export default async function FeedbackPage() {
   const fetchedFeedbacks = await getAllFeedbacks()
   const feedbacks: FeedbackDataType[] = fetchedFeedbacks
@@ -115,9 +99,6 @@ export default async function FeedbackPage() {
       <div className="flex flex-wrap gap-5">
         <BarChartCard title="Usage frequency" data={getUsageFrequencyData(feedbacks)} />
         <BarChartCard title="Fair price for Pro" data={getFairPriceData(feedbacks)} />
-        <PieChartCard title="Testimonial consent" data={getTestimonialConsentData(feedbacks)} size="2-card" />
-      </div>
-      <div className="flex flex-wrap gap-5">
         <BarChartCard
           title="Most requested Pro features"
           data={getMostRequestedProData(feedbacks)}

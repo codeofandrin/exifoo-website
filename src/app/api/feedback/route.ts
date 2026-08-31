@@ -12,14 +12,11 @@ export async function POST(request: NextRequest) {
   let body: {
     license_key_id: string
     usage_frequency: string
-    likes: string
-    missing_or_inconvenient: string
+    missing_or_inconvenient: string | null
     pro_features: string[]
     pro_features_more_formats: string | null
     pro_features_other: string | null
     fair_price: string
-    testimonial_consent: string
-    name: string | null
   }
 
   try {
@@ -31,14 +28,11 @@ export async function POST(request: NextRequest) {
   const {
     license_key_id,
     usage_frequency,
-    likes,
     missing_or_inconvenient,
     pro_features,
     pro_features_more_formats,
     pro_features_other,
-    fair_price,
-    testimonial_consent,
-    name
+    fair_price
   } = body
 
   try {
@@ -49,14 +43,11 @@ export async function POST(request: NextRequest) {
       userName,
       userEmail,
       usageFrequency: usage_frequency,
-      likes,
       missingOrInconvenient: missing_or_inconvenient,
       proFeatures: pro_features,
       proFeaturesMoreFormats: pro_features_more_formats ?? null,
       proFeaturesOther: pro_features_other ?? null,
-      fairPrice: fair_price,
-      testimonialConsent: testimonial_consent,
-      name: name ?? null
+      fairPrice: fair_price
     })
   } catch (err) {
     console.error("Feedback submission error:", err)

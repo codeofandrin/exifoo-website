@@ -9,7 +9,7 @@ import { getFeedbackIds } from "@/utils/server/neon"
 
 export default async function DashboardLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const feedbackIds = await getFeedbackIds()
-  // const feedbackIds = DUMMY_FEEDBACKS.map(f => f.licenseKeyId)
+  // const feedbackIds = DUMMY_FEEDBACKS.map((f) => f.licenseKeyId)
 
   return (
     <SidebarProvider>

@@ -3,13 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import { type FeedbackDataType } from "@/utils/server/neon"
-import {
-  USAGE_FREQUENCY_OPTIONS,
-  PRO_FEATURES_OPTIONS,
-  FAIR_PRICE_OPTIONS,
-  TESTIMONIAL_CONSENT_OPTIONS,
-  TESTIMONIAL_CONSENT_COLORS
-} from "@/lib/feedback/data-maps"
+import { USAGE_FREQUENCY_OPTIONS, PRO_FEATURES_OPTIONS, FAIR_PRICE_OPTIONS } from "@/lib/feedback/data-maps"
 
 const DATE_FORMAT = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" })
 
@@ -19,7 +13,7 @@ function labelFor(options: { value: string; label: string }[], value: string): s
 
 function orNoAnswer(value: string | null): string {
   const trimmed = value?.trim()
-  return !trimmed || trimmed === "-" ? "No answer" : trimmed
+  return !trimmed || trimmed === "-" ? "—" : trimmed
 }
 
 function Row({
@@ -56,7 +50,7 @@ function SubRow({ label, value, withBorder }: { label: string; value: string; wi
   )
 }
 
-function FeedbackCard({ label, value }: { label: string; value: string }) {
+function FeedbackCard({ label, value }: { label: string; value: string | null }) {
   return (
     <div className="rounded-lg bg-neutral-100 p-3 text-[13px] leading-[1.5] text-neutral-900">
       <div className="mb-1.5 font-medium text-neutral-500">{label}</div>
@@ -74,7 +68,7 @@ export default function FeedbackDetailsDialog({
   open: boolean
   onOpenChange: (open: boolean) => void
 }) {
-  const displayName = feedback ? (feedback.name ?? feedback.userName) : ""
+  const displayName = feedback ? feedback.userName : ""
 
   const proFeatureSubRows: { label: string; value: string }[] = []
   if (feedback?.proFeaturesMoreFormats?.trim()) {
@@ -83,11 +77,6 @@ export default function FeedbackDetailsDialog({
   if (feedback?.proFeaturesOther?.trim()) {
     proFeatureSubRows.push({ label: "Other", value: feedback.proFeaturesOther.trim() })
   }
-
-  const testimonialMap = TESTIMONIAL_CONSENT_OPTIONS.filter(
-    (f) => f.value === feedback?.testimonialConsent
-  )[0]
-  const testimonialColor = TESTIMONIAL_CONSENT_COLORS[testimonialMap?.value] || "none"
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -142,20 +131,12 @@ export default function FeedbackDetailsDialog({
                 </Badge>
               </Row>
 
-              <Row label="Testimonial consent" withBorder={false}>
-                <Badge
-                  style={{
-                    backgroundColor: `color-mix(in srgb, ${testimonialColor} 40%, transparent)`,
-                    color: `color-mix(in oklch, ${testimonialColor}, black 60%)`
-                  }}>
-                  {labelFor(TESTIMONIAL_CONSENT_OPTIONS, feedback.testimonialConsent)}
-                </Badge>
-              </Row>
-            </div>
-
-            <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <FeedbackCard label="Likes" value={feedback.likes} />
-              <FeedbackCard label="Missing / inconvenient" value={feedback.missingOrInconvenient} />
+              <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <FeedbackCard
+                  label="A missing feature, a bug, or anything else? (optional)"
+                  value={feedback.missingOrInconvenient}
+                />
+              </div>
             </div>
           </>
         )}

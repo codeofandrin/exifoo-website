@@ -2,7 +2,7 @@ import "server-only"
 
 import { neon } from "@neondatabase/serverless"
 
-function getSql() {
+export function getSql() {
   if (!process.env.NEON_DATABASE_URL) {
     throw new Error("NEON_DATABASE_URL is not set")
   }
@@ -14,14 +14,11 @@ export interface FeedbackDataType {
   userName: string
   userEmail: string
   usageFrequency: string
-  likes: string
-  missingOrInconvenient: string
+  missingOrInconvenient: string | null
   proFeatures: string[]
   proFeaturesMoreFormats: string | null
   proFeaturesOther: string | null
   fairPrice: string
-  testimonialConsent: string
-  name: string | null
   createdAt: Date
 }
 
@@ -30,14 +27,11 @@ export interface FeedbackInsertDataType {
   userName: string
   userEmail: string
   usageFrequency: string
-  likes: string
-  missingOrInconvenient: string
+  missingOrInconvenient: string | null
   proFeatures: string[]
   proFeaturesMoreFormats: string | null
   proFeaturesOther: string | null
   fairPrice: string
-  testimonialConsent: string
-  name: string | null
 }
 
 export async function insertFeedback({
@@ -45,27 +39,24 @@ export async function insertFeedback({
   userName,
   userEmail,
   usageFrequency,
-  likes,
   missingOrInconvenient,
   proFeatures,
   proFeaturesMoreFormats,
   proFeaturesOther,
-  fairPrice,
-  testimonialConsent,
-  name
+  fairPrice
 }: FeedbackInsertDataType): Promise<void> {
   const sql = getSql()
   await sql`
         INSERT INTO feedback (
             license_key_id, user_name, user_email,
-            usage_frequency, likes, missing_or_inconvenient,
+            usage_frequency, missing_or_inconvenient,
             pro_features, pro_features_more_formats, pro_features_other,
-            fair_price, testimonial_consent, name
+            fair_price
         ) VALUES (
             ${licenseKeyId}, ${userName}, ${userEmail},
-            ${usageFrequency}, ${likes}, ${missingOrInconvenient},
+            ${usageFrequency}, ${missingOrInconvenient},
             ${proFeatures}, ${proFeaturesMoreFormats}, ${proFeaturesOther},
-            ${fairPrice}, ${testimonialConsent}, ${name}
+            ${fairPrice}
         )
     `
 }
@@ -81,10 +72,10 @@ export async function getAllFeedbacks(): Promise<FeedbackDataType[]> {
   const feedbacks = await sql`
     SELECT
         license_key_id AS "licenseKeyId", user_name AS "userName", user_email AS "userEmail",
-        usage_frequency AS "usageFrequency", likes, missing_or_inconvenient AS "missingOrInconvenient",
+        usage_frequency AS "usageFrequency", missing_or_inconvenient AS "missingOrInconvenient",
         pro_features AS "proFeatures", pro_features_more_formats AS "proFeaturesMoreFormats",
         pro_features_other AS "proFeaturesOther",
-        fair_price AS "fairPrice", testimonial_consent AS "testimonialConsent", name, created_at AS "createdAt"
+        fair_price AS "fairPrice", created_at AS "createdAt"
     FROM feedback
   `
   return feedbacks as FeedbackDataType[]

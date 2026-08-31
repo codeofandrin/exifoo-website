@@ -47,7 +47,7 @@ function EmailLink({
       onMouseEnter={reveal}
       onFocus={reveal}
       onClick={reveal}
-      className={`${className} text-neutral-500 transition-[opacity] duration-200 hover:opacity-60`}>
+      className={`${className} text-neutral-500 transition-opacity duration-200 hover:opacity-60`}>
       {text}
     </Link>
   )
@@ -62,7 +62,7 @@ function Links({ title, items, emailItems }: LinksPropsType) {
           <Link
             key={`footer-${title}-item-${i}`}
             href={link}
-            className={`${i !== 0 && "mt-4 sm:mt-5"} text-neutral-500 transition-[opacity] duration-200 hover:opacity-60`}>
+            className={`${i !== 0 && "mt-4 sm:mt-5"} text-neutral-500 transition-opacity duration-200 hover:opacity-60`}>
             {text}
           </Link>
         ))}
@@ -81,7 +81,7 @@ function Links({ title, items, emailItems }: LinksPropsType) {
 
 export default function Footer() {
   return (
-    <div className="mt-40 flex w-full flex-col px-7 pb-20 sm:max-w-screen-xl sm:flex-row sm:items-center">
+    <div className="mt-40 flex w-full flex-col px-7 pb-20 sm:max-w-(--breakpoint-xl) sm:flex-row sm:items-center">
       <div className="flex w-fit flex-col sm:w-1/2 sm:justify-start">
         <div className="w-fit">
           {/* Logo */}
@@ -89,7 +89,7 @@ export default function Footer() {
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="h-12 w-fit select-none transition-[opacity] duration-200 group-hover:opacity-60"
+              className="h-12 w-fit transition-opacity duration-200 select-none group-hover:opacity-60"
               sizes="(max-width: 640px) 500px, 2257px"
             />
           </Link>

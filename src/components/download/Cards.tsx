@@ -12,7 +12,7 @@ interface CardPropsType {
 function Card({ className = "", children }: CardPropsType) {
   return (
     <div
-      className={`${className} relative w-full max-w-sm overflow-hidden rounded-2xl border border-accent-800 bg-accent-50 p-8 transition-shadow duration-200 sm:hover:shadow-xl`}>
+      className={`${className} border-accent-800 bg-accent-50 relative w-full max-w-sm overflow-hidden rounded-2xl border p-8 transition-shadow duration-200 sm:hover:shadow-xl`}>
       {children}
     </div>
   )
@@ -78,7 +78,7 @@ export default function Cards() {
         <CardDescription>
           <p>
             Do you need help installing{" "}
-            <span className="font-logo font-semibold tracking-tight text-logo">exifoo</span>?
+            <span className="font-logo text-logo font-semibold tracking-tight">exifoo</span>?
           </p>
           <p className="mt-2">
             Feel free to contact us at <ObfuscatedEmailLink encodedEmail={EmailObfuscated.help} /> — we're

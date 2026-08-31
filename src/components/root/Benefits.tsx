@@ -56,7 +56,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`${className} ${!first && "mt-16"} relative w-full overflow-hidden rounded-2xl border border-accent-800 p-6 shadow-xl sm:hidden`}>
+        className={`${className} ${!first && "mt-16"} border-accent-800 relative w-full overflow-hidden rounded-2xl border p-6 shadow-xl sm:hidden`}>
         {children}
       </div>
       {/* Desktop Card */}
@@ -69,7 +69,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onMouseLeave={handleMouseLeave}
         whileHover={{ scale: 1.01 }}
         transition={{ type: "spring", bounce: 0.6 }}
-        className={`${className} relative hidden max-w-sm overflow-hidden rounded-2xl border border-accent-800 p-8 transition-shadow duration-200 sm:block sm:hover:shadow-xl`}>
+        className={`${className} border-accent-800 relative hidden max-w-sm overflow-hidden rounded-2xl border p-8 transition-shadow duration-200 sm:block sm:hover:shadow-xl`}>
         <div
           className="pointer-events-none absolute -inset-px -z-50 opacity-0 transition duration-300"
           style={{
@@ -88,7 +88,7 @@ interface CardIconPropsType {
 }
 
 function CardIcon({ children }: CardIconPropsType) {
-  return <div className="w-fit rounded-xl bg-accent-800 px-3 py-2">{children}</div>
+  return <div className="bg-accent-800 w-fit rounded-xl px-3 py-2">{children}</div>
 }
 
 interface CardTitlePropsType {
@@ -109,11 +109,11 @@ function CardDescription({ children }: CardDescriptionPropsType) {
 
 export default function Benefits() {
   return (
-    <div className="mt-20 flex w-full flex-col items-center px-7 sm:max-w-screen-xl">
+    <div className="mt-20 flex w-full flex-col items-center px-7 sm:max-w-(--breakpoint-xl)">
       {/* Heading */}
       <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
         <div className="flex flex-col sm:block">
-          Our tool. <span className="font-bold text-accent-500">Your experience.</span>
+          Our tool. <span className="text-accent-500 font-bold">Your experience.</span>
         </div>
       </h1>
       {/* Description */}
@@ -123,7 +123,7 @@ export default function Benefits() {
       {/* Cards */}
       <div className="mt-16 w-full sm:mt-28 sm:flex sm:flex-wrap sm:justify-center sm:gap-10 lg:flex-nowrap">
         {/* Privacy */}
-        <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
+        <Card className="to-accent-100 bg-linear-to-b from-white sm:bg-none" first>
           <CardIcon>
             <SVGShield className="w-8 fill-white sm:w-10" />
           </CardIcon>
@@ -145,7 +145,7 @@ export default function Benefits() {
           </CardDescription>
         </Card>
         {/* Simple */}
-        <Card className="bg-gradient-to-t from-white to-accent-100 sm:bg-none">
+        <Card className="to-accent-100 bg-linear-to-t from-white sm:bg-none">
           <CardIcon>
             <SVGCheck className="w-8 text-white sm:w-10" />
           </CardIcon>

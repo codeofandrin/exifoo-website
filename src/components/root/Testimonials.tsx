@@ -54,7 +54,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onBlur={handleBlur}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`${className} ${!first && "mt-16"} relative w-full overflow-hidden rounded-xl border border-accent-800 p-6 shadow-xl sm:hidden`}>
+        className={`${className} ${!first && "mt-16"} border-accent-800 relative w-full overflow-hidden rounded-xl border p-6 shadow-xl sm:hidden`}>
         {children}
       </div>
       {/* Desktop Card */}
@@ -67,7 +67,7 @@ function Card({ className, first = false, children }: CardPropsType) {
         onMouseLeave={handleMouseLeave}
         whileHover={{ scale: 1.01 }}
         transition={{ type: "spring", bounce: 0.6 }}
-        className={`${className} relative hidden min-h-[22rem] max-w-sm overflow-hidden rounded-xl border border-accent-800 p-8 transition-shadow duration-200 sm:flex sm:hover:shadow-xl`}>
+        className={`${className} border-accent-800 relative hidden min-h-88 max-w-sm overflow-hidden rounded-xl border p-8 transition-shadow duration-200 sm:flex sm:hover:shadow-xl`}>
         <div
           className="pointer-events-none absolute -inset-px -z-50 opacity-0 transition duration-300"
           style={{
@@ -128,23 +128,23 @@ function CardAuthor({ imgClass, name, profession }: CardAuthorPropsType) {
 export default function Testimonials() {
   return (
     <div className="mt-40 px-7 pb-40 md:px-10 lg:px-20">
-      <div className="sm:max-w-screen-xl">
+      <div className="sm:max-w-(--breakpoint-xl)">
         {/* Header */}
         <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
           What our users say
         </h1>
         {/* Description */}
         <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
-          Read how <span className="font-logo font-bold text-logo">exifoo</span> has made organizing photos
+          Read how <span className="font-logo text-logo font-bold">exifoo</span> has made organizing photos
           easier for people just like you.
         </h2>
         {/* Cards */}
         <div className="mt-16 sm:mt-28 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-10 lg:flex-nowrap">
           {/* Author 1 */}
-          <Card className="bg-gradient-to-b from-white to-accent-100 sm:bg-none" first>
+          <Card className="to-accent-100 bg-linear-to-b from-white sm:bg-none" first>
             <CardReview>
               <>
-                I can't recommend <span className="font-logo font-medium text-logo">exifoo</span> enough! It's
+                I can't recommend <span className="font-logo text-logo font-medium">exifoo</span> enough! It's
                 been a game changer for organizing my photos, making them easy to recognize. I also appreciate
                 its commitment to privacy, it keeps my photos organized and my data safe.
               </>
@@ -161,7 +161,7 @@ export default function Testimonials() {
               <>
                 I spent hours sorting through my photos, struggling to remember when and where they were
                 taken. It was exhausting. But with{" "}
-                <span className="font-logo font-medium text-logo">exifoo</span>, everything is so much easier.
+                <span className="font-logo text-logo font-medium">exifoo</span>, everything is so much easier.
                 And the best thing about it is that I only had to pay once.
               </>
             </CardReview>
@@ -172,10 +172,10 @@ export default function Testimonials() {
             />
           </Card>
           {/* Author 3 */}
-          <Card className="bg-gradient-to-t from-white to-accent-100 sm:bg-none">
+          <Card className="to-accent-100 bg-linear-to-t from-white sm:bg-none">
             <CardReview>
               <>
-                I love how easy <span className="font-logo font-medium text-logo">exifoo</span> is to use.
+                I love how easy <span className="font-logo text-logo font-medium">exifoo</span> is to use.
                 There's no sign-up needed, so I could get started right away. The interface is super simple
                 and makes renaming photos so easy. It's the perfect tool for anyone seeking a quick and easy
                 solution!

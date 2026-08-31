@@ -13,15 +13,15 @@ export default function Preview() {
   const [isToggleOn, setIsToggleOn] = useState(false)
 
   return (
-    <div className="mt-28 flex w-full flex-col items-center px-7 sm:mt-72 sm:max-w-screen-xl">
+    <div className="mt-28 flex w-full flex-col items-center px-7 sm:mt-72 sm:max-w-(--breakpoint-xl)">
       {/* CTA */}
       <div className="flex w-full justify-center sm:justify-start">
         <div className="ml-32 flex flex-col sm:ml-0 sm:flex-row">
-          <p className="ml-3 font-marker text-xl text-neutral-800 sm:text-3xl">TRY IT OUT</p>
+          <p className="font-marker ml-3 text-xl text-neutral-800 sm:text-3xl">TRY IT OUT</p>
           <Image
             src={ImgArrowMarker}
             alt="arrow marker"
-            className="mt-2 w-10 -rotate-[160deg] select-none sm:ml-4 sm:mt-4 sm:w-12 sm:rotate-[120deg] md:ml-8 md:mt-0 md:w-16 md:rotate-[100deg]"
+            className="mt-2 w-10 rotate-[-160deg] select-none sm:mt-4 sm:ml-4 sm:w-12 sm:rotate-120 md:mt-0 md:ml-8 md:w-16 md:rotate-100"
           />
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function Preview() {
       <div className="relative mt-8 w-full sm:mt-0">
         <div className="flex flex-col items-center">
           <h3 className="text-neutral-700">
-            Turn on <span className="font-logo text-lg font-bold text-logo sm:text-xl">exifoo</span>
+            Turn on <span className="font-logo text-logo text-lg font-bold sm:text-xl">exifoo</span>
           </h3>
           <div className="mt-2 sm:hidden">
             <ToggleSwitch handleToggle={() => setIsToggleOn(!isToggleOn)} />
@@ -56,7 +56,7 @@ export default function Preview() {
           />
         </div>
         {/* Description */}
-        <div className="flex flex-col items-center text-center text-xl font-medium text-neutral-800 sm:text-2xl lg:absolute lg:right-0 lg:top-1/2 lg:max-w-60 lg:-translate-y-1/2 lg:transform lg:text-left">
+        <div className="flex flex-col items-center text-center text-xl font-medium text-neutral-800 sm:text-2xl lg:absolute lg:top-1/2 lg:right-0 lg:max-w-60 lg:-translate-y-1/2 lg:transform lg:text-left">
           <p>Turn a choatic folder ...</p>
           <AnimatePresence>
             {isToggleOn ? (

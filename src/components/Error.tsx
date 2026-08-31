@@ -23,7 +23,7 @@ export default function Error({ reset }: ErrorPropsType) {
         </div>
       </div>
       <div className="shrink-0">
-        <h1 className="mt-4 text-center font-logo text-4xl font-semibold tracking-tight text-neutral-800 sm:mt-6 sm:text-6xl">
+        <h1 className="font-logo mt-4 text-center text-4xl font-semibold tracking-tight text-neutral-800 sm:mt-6 sm:text-6xl">
           Something went wrong
         </h1>
         <div className="mt-6 text-center font-medium text-neutral-500 sm:mt-8 sm:text-lg">
@@ -44,7 +44,7 @@ export default function Error({ reset }: ErrorPropsType) {
               <p className="ml-2">Contact Support</p>
             </div>
           </Button>
-          <Button color="primary" className="mt-3 w-full sm:ml-5 sm:mt-0 sm:w-40" onClick={reset}>
+          <Button color="primary" className="mt-3 w-full sm:mt-0 sm:ml-5 sm:w-40" onClick={reset}>
             <div className="flex items-center">
               <SVGRotateCCW className="h-4 w-4" />
               <p className="ml-2">Try again</p>

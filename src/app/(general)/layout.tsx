@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="home-root scroll-smooth">
       <body className="flex flex-col items-center">
         <Navbar />
         <div className="mt-24 w-full">{children}</div>

@@ -1,39 +1,41 @@
+@reference "../app/globals.css";
+
 .content h1 {
-    @apply pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl;
+  @apply font-logo pb-6 text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl;
 }
 
 .content h2 {
-    @apply pb-3 text-2xl font-semibold text-neutral-700;
+  @apply pb-3 text-2xl font-semibold text-neutral-700;
 }
 
 .content h3 {
-    @apply pb-3 text-lg font-semibold text-neutral-700;
+  @apply pb-3 text-lg font-semibold text-neutral-700;
 }
 
 .content h4 {
-    @apply mt-6 pb-2 text-base font-semibold text-neutral-700;
+  @apply mt-6 pb-2 text-base font-semibold text-neutral-700;
 }
 
 .content p {
-    @apply leading-normal text-neutral-600;
+  @apply leading-normal text-neutral-600;
 }
 
 .content ul {
-    @apply my-3 ml-3 list-inside list-disc leading-normal text-neutral-600;
+  @apply my-3 ml-3 list-inside list-disc leading-normal text-neutral-600;
 }
 
 .content .spacer {
-    @apply h-3;
+  @apply h-3;
 }
 
 .content .spacer-lg {
-    @apply h-10;
+  @apply h-10;
 }
 
 .content .spacer-2xl {
-    @apply h-20;
+  @apply h-20;
 }
 
 .content strong {
-    @apply font-semibold;
+  @apply font-semibold;
 }

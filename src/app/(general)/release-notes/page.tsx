@@ -15,8 +15,8 @@ export default async function ReleaseNotes() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-screen-xl">
-        <h1 className="pb-6 font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
+      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-(--breakpoint-xl)">
+        <h1 className="font-logo pb-6 text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
           Release Notes
         </h1>
         {markdownFiles.map((content: string, i: number) => {
@@ -29,7 +29,7 @@ export default async function ReleaseNotes() {
             <div key={`release-notes-item-${i}`}>
               {/* Mobile view */}
               <div className="mt-14 flex flex-col sm:hidden">
-                <h3 className="text-sm font-medium text-primary-400">{date}</h3>
+                <h3 className="text-primary-400 text-sm font-medium">{date}</h3>
                 <div className={`${isLast ? "pb-5" : "pb-3"} mt-5`}>
                   <MarkdownContent>{content}</MarkdownContent>
                 </div>
@@ -37,14 +37,14 @@ export default async function ReleaseNotes() {
               {/* Desktop view */}
               <div className="mt-5 hidden sm:flex">
                 <div className="">
-                  <p className="text-sm font-medium text-primary-400">{date}</p>
+                  <p className="text-primary-400 text-sm font-medium">{date}</p>
                   <div className="flex py-5">
                     {/* mx-10 - p-1 - p-[1.5px] = 34.5px */}
                     <div className={`${isLast ? "mx-[34.5px]" : "mx-10"} mx-10 flex flex-col items-center`}>
-                      <div className="h-full w-px bg-primary-200"></div>
+                      <div className="bg-primary-200 h-full w-px"></div>
                       {isLast && (
-                        <div className="rounded-full border border-primary-200 p-1">
-                          <div className="rounded-full bg-primary-200 p-[1.5px]"></div>
+                        <div className="border-primary-200 rounded-full border p-1">
+                          <div className="bg-primary-200 rounded-full p-[1.5px]"></div>
                         </div>
                       )}
                     </div>

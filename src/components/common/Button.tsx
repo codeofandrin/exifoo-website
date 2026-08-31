@@ -1,8 +1,8 @@
-import type { CustomFlowbiteTheme, ButtonProps as FlowbiteButtonPropsType } from "flowbite-react"
+import type { ButtonProps as FlowbiteButtonPropsType } from "flowbite-react"
 import { Button as FlowbiteButton } from "flowbite-react"
 import SVGSpinner from "@/assets/icons/Spinner.svg"
 
-const theme: CustomFlowbiteTheme["button"] = {
+const theme = {
   color: {
     primary:
       "bg-primary-500 text-white hover:bg-primary-600 font-medium transition-colors duration-200 disabled:text-primary-200 disabled:hover:bg-primary-500 items-center",
@@ -12,7 +12,7 @@ const theme: CustomFlowbiteTheme["button"] = {
       "bg-white hover:bg-neutral-100 border border-neutral-300 text-neutral-600 font-normal transition-colors duration-200 disabled:text-neutral-400 disabled:hover:bg-white",
     critical:
       "bg-red-600 hover:bg-red-700 border border-red-800 text-white font-medium transition-colors duration-200 disabled:hover:bg-red-600 disabled:text-red-200",
-    cta: "bg-gradient-to-t from-primary-600 to-primary-500 text-white font-bold"
+    cta: "bg-linear-to-t from-primary-600 to-primary-500 text-white font-bold"
   },
   disabled: "cursor-not-allowed",
   size: {
@@ -29,6 +29,8 @@ const theme: CustomFlowbiteTheme["button"] = {
 
 interface ButtonPropsType extends FlowbiteButtonPropsType {
   isLoading?: boolean
+  target?: string
+  rel?: string
 }
 
 export default function Button({ isLoading = false, ...props }: ButtonPropsType) {

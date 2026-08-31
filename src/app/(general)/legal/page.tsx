@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function LegalNotice() {
   return (
     <div className="flex flex-col items-center">
-      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-screen-xl">
+      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-(--breakpoint-xl)">
         <MarkdownContent>{MdLegalNotice}</MarkdownContent>
       </div>
     </div>

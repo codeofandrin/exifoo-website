@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPolicy() {
   return (
     <div className="flex flex-col items-center">
-      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-screen-xl">
+      <div className="mt-24 w-full px-7 sm:mt-32 sm:max-w-(--breakpoint-xl)">
         <div className="content-privacy">
           <MarkdownContent>{MdPrivacyPolicy}</MarkdownContent>
         </div>

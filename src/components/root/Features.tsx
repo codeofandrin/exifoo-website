@@ -43,15 +43,15 @@ export default function Features() {
   return (
     <div className="mt-14 flex w-full flex-col sm:mt-24">
       {/* Color Transition In */}
-      <div className="h-40 bg-gradient-to-b from-white to-primary-50" />
+      <div className="to-primary-50 h-40 bg-linear-to-b from-white" />
       {/* Features */}
       <div
         id="features"
-        className="flex scroll-mt-32 flex-col items-center bg-primary-50 px-7 pb-20 sm:pb-40">
-        <div className="sm:max-w-screen-xl">
+        className="bg-primary-50 flex scroll-mt-32 flex-col items-center px-7 pb-20 sm:pb-40">
+        <div className="sm:max-w-(--breakpoint-xl)">
           {/* Heading */}
           <h1 className="text-3xl font-semibold text-neutral-800 sm:max-w-2xl sm:text-4xl">
-            <span className="font-bold text-accent-500">The ultimate tool</span> to enhance your photo
+            <span className="text-accent-500 font-bold">The ultimate tool</span> to enhance your photo
             organization.
           </h1>
           {/* Files Select */}
@@ -59,7 +59,7 @@ export default function Features() {
             <Image
               src={ImgFilenamesSelect}
               alt="app_filenames_select"
-              className="select-none rounded-[4.5px] shadow-apple md:max-w-sm lg:max-w-xl"
+              className="shadow-apple rounded-[4.5px] select-none md:max-w-sm lg:max-w-xl"
             />
             <div className="flex flex-col md:ml-14 md:max-w-lg lg:ml-24">
               <FeatureTitle>Select unlimited files</FeatureTitle>
@@ -75,7 +75,7 @@ export default function Features() {
               <Image
                 src={ImgRenameOptions}
                 alt="app_options"
-                className="w-72 select-none rounded-lg shadow-apple md:min-w-[290px] lg:mr-20 lg:min-w-fit"
+                className="shadow-apple w-72 rounded-lg select-none md:min-w-[290px] lg:mr-20 lg:min-w-fit"
               />
             </div>
             <div className="flex flex-col md:mr-14 md:max-w-lg lg:mr-24">
@@ -92,7 +92,7 @@ export default function Features() {
               <Image
                 src={ImgExampleOutput}
                 alt="app_example_output"
-                className="w-72 select-none rounded-lg shadow-apple md:min-w-[290px] lg:ml-20 lg:min-w-fit"
+                className="shadow-apple w-72 rounded-lg select-none md:min-w-[290px] lg:ml-20 lg:min-w-fit"
               />
             </div>
             <div className="flex flex-col md:ml-14 md:max-w-md lg:ml-24">
@@ -109,7 +109,7 @@ export default function Features() {
               <Image
                 src={ImgStatusReport}
                 alt="app_status_report"
-                className="w-80 select-none rounded-lg shadow-apple md:min-w-96 lg:mr-20"
+                className="shadow-apple w-80 rounded-lg select-none md:min-w-96 lg:mr-20"
               />
             </div>
             <div className="flex flex-col md:mr-14 md:max-w-lg lg:mr-24">
@@ -125,7 +125,7 @@ export default function Features() {
             <Image
               src={ImgRenameHistory}
               alt="app_rename_history"
-              className="select-none rounded-[4.5px] shadow-apple md:max-w-sm lg:max-w-xl"
+              className="shadow-apple rounded-[4.5px] select-none md:max-w-sm lg:max-w-xl"
             />
             <div className="flex flex-col md:ml-14 md:max-w-lg lg:ml-24">
               <FeatureTitle>Rename History</FeatureTitle>
@@ -138,7 +138,7 @@ export default function Features() {
         </div>
       </div>
       {/* Color Transition Out */}
-      <div className="h-40 bg-gradient-to-t from-white to-primary-50" />
+      <div className="to-primary-50 h-40 bg-linear-to-t from-white" />
     </div>
   )
 }

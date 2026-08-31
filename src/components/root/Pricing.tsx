@@ -22,7 +22,7 @@ function Card({ children, theme, first = false }: CardPropsType) {
     card = (
       <div
         className={`${cardClasses} ${!first && "mt-14 md:mt-0"} relative w-full rounded-2xl p-8 sm:max-w-md`}>
-        <div className="absolute inset-0 bg-[radial-gradient(70%_200px_at_50%_0%,theme(backgroundColor.white/10%),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(70%_200px_at_50%_0%,rgb(255_255_255_/_10%),transparent)]" />
         {children}
       </div>
     )
@@ -30,7 +30,7 @@ function Card({ children, theme, first = false }: CardPropsType) {
     cardClasses = "border border-neutral-400"
     card = (
       <div
-        className={`${cardClasses} ${!first && "mt-14 sm:ml-28 sm:mt-0"} w-full rounded-2xl p-8 sm:max-w-md`}>
+        className={`${cardClasses} ${!first && "mt-14 sm:mt-0 sm:ml-28"} w-full rounded-2xl p-8 sm:max-w-md`}>
         {children}
       </div>
     )
@@ -68,7 +68,7 @@ function CardTop({ version, price, description, theme }: CardTopPropsType) {
       <h2 className={`${versionClasses} sm:text-lg`}>{version}</h2>
       <h1 className={`${priceClasses} mt-3 text-4xl sm:mt-5 sm:text-5xl`}>{price}</h1>
       <h2 className={`${descClasses} mt-4 text-sm sm:mt-6 sm:text-base`}>{description}</h2>
-      <div className={`${dividerClasses} mb-8 mt-7 h-px sm:mb-10 sm:mt-9`} />
+      <div className={`${dividerClasses} mt-7 mb-8 h-px sm:mt-9 sm:mb-10`} />
     </div>
   )
 }
@@ -99,9 +99,9 @@ function CardFeatures({ theme, features }: CardFeaturesPropsType) {
           <div key={i} className="mt-3 flex items-center">
             <div className={`${circleBgColor} rounded-full p-1`}>
               {active ? (
-                <SVGCheck className="h-3 w-3 stroke-[3] text-white" />
+                <SVGCheck className="h-3 w-3 stroke-3 text-white" />
               ) : (
-                <SVGX className="h-3 w-3 stroke-[3] text-white" />
+                <SVGX className="h-3 w-3 stroke-3 text-white" />
               )}
             </div>
             <p className={`${textColor} ml-3 text-sm sm:text-base`}>{text}</p>
@@ -151,17 +151,17 @@ export default function Pricing() {
   // demoFeatures[4].active = false
 
   return (
-    <div className="mt-52 flex w-full flex-col items-center bg-neutral-100 px-7 pb-40 pt-28 sm:pt-36">
-      <div id="pricing" className="w-full scroll-mt-32 sm:max-w-screen-xl">
+    <div className="mt-52 flex w-full flex-col items-center bg-neutral-100 px-7 pt-28 pb-40 sm:pt-36">
+      <div id="pricing" className="w-full scroll-mt-32 sm:max-w-(--breakpoint-xl)">
         {/* Header */}
         <h1 className="text-center text-3xl font-semibold text-neutral-800 sm:text-4xl">
           <div className="flex flex-col sm:block">
-            Free forever. <span className="font-bold text-accent-500">Use forever.</span>
+            Free forever. <span className="text-accent-500 font-bold">Use forever.</span>
           </div>
         </h1>
         {/* Description */}
         <h2 className="mt-3 text-center text-neutral-600 sm:mt-5 sm:text-lg">
-          <span className="font-logo font-bold text-logo">exifoo</span> is a free and open-source app without
+          <span className="font-logo text-logo font-bold">exifoo</span> is a free and open-source app without
           any fees. Get a license key for free to get started!
         </h2>
         <div className="mt-20 flex w-full justify-center">

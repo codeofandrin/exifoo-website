@@ -29,7 +29,7 @@ function MobileMenu({ currentPath, closeMenu }: MobileMenuPropsType) {
 
   return (
     <div className="absolute z-[99] w-full">
-      <ul className="mt-4 flex flex-col rounded-lg bg-logo p-4 font-medium shadow-xl">
+      <ul className="bg-logo mt-4 flex flex-col rounded-lg p-4 font-medium shadow-xl">
         {menuItems.map(({ name, link, highlight }) => {
           const currentHighlight = highlight && currentPath === link
 
@@ -61,14 +61,14 @@ export default function Navbar() {
   return (
     <div
       className={`fixed top-0 z-[99] w-full ${scrollPosition > 20 ? "shadow-md" : "shadow-none"} flex justify-center bg-white/70 backdrop-blur-xl transition-shadow duration-300`}>
-      <div className="flex w-full flex-col px-7 sm:max-w-screen-xl">
+      <div className="flex w-full flex-col px-7 sm:max-w-(--breakpoint-xl)">
         <div
           className={`flex items-center justify-between ${scrollPosition > 20 ? "py-7 sm:py-5" : "py-7 sm:py-10"} transition-[padding] duration-300`}>
           <Link href="/" className="group">
             <Image
               src={ImgLogoLarge}
               alt={ImgLogoLarge.src}
-              className="w-40 select-none transition-[opacity] duration-200 group-hover:opacity-60"
+              className="w-40 transition-opacity duration-200 select-none group-hover:opacity-60"
               sizes="(max-width: 640px) 500px, 2257px"
             />
           </Link>
@@ -79,7 +79,7 @@ export default function Navbar() {
                 <Link
                   key={`menu-item-${name}`}
                   href={link}
-                  className={`${currentHighlight ? "text-primary-400" : "text-logo"} transition-[opacity] duration-200 hover:opacity-60`}>
+                  className={`${currentHighlight ? "text-primary-400" : "text-logo"} transition-opacity duration-200 hover:opacity-60`}>
                   {name}
                 </Link>
               )
@@ -90,7 +90,7 @@ export default function Navbar() {
             aria-label={`${isToggleOpen ? "Close Navigation Menu" : "Open Navigation Menu"}`}
             className="sm:hidden"
             onClick={handleToggleMenu}>
-            {isToggleOpen ? <SVGX className="w-7 text-logo" /> : <SVGMenu className="w-7 text-logo" />}
+            {isToggleOpen ? <SVGX className="text-logo w-7" /> : <SVGMenu className="text-logo w-7" />}
           </button>
         </div>
         {/* Mobile Menu */}

@@ -21,15 +21,15 @@ export default async function Download() {
 
   return (
     <div className="flex flex-col items-center sm:overflow-x-hidden">
-      <div className="mt-14 w-full px-7 sm:mt-40 sm:max-w-screen-xl">
+      <div className="mt-14 w-full px-7 sm:mt-40 sm:max-w-(--breakpoint-xl)">
         <div className="sm:flex">
           <div className="sm:w-1/2">
             <h1 className="font-logo text-3xl font-bold tracking-tight text-neutral-800 sm:text-4xl">
-              Download <span className="tracking-tighter text-logo">exifoo</span>
+              Download <span className="text-logo tracking-tighter">exifoo</span>
             </h1>
             <h2 className="mt-3 text-neutral-600 sm:mt-6 sm:text-lg">
               Shoot more. Organize less. With{" "}
-              <span className="font-logo text-xl font-semibold tracking-tight text-logo">exifoo</span> you can
+              <span className="font-logo text-logo text-xl font-semibold tracking-tight">exifoo</span> you can
               keep your photos and videos organized.
             </h2>
             <div className="mt-8 sm:mt-12">
@@ -37,7 +37,7 @@ export default async function Download() {
                 <DynamicButton
                   downloadURLMacOS={{ arm64: downloadURLMacOSArm64, x64: downloadURLMacOSX64 }}
                 />
-                <p className="mt-3 text-sm text-neutral-600 lg:ml-5 lg:mt-0">
+                <p className="mt-3 text-sm text-neutral-600 lg:mt-0 lg:ml-5">
                   macOS 10.15 (Catalina) or higher
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default async function Download() {
                 <p className="ml-2">Download for macOS (Apple Chip)</p>
               </div>
             </Button>
-            <Button className="mt-3 sm:ml-5 sm:mt-0" color="primary" href={downloadURLMacOSX64}>
+            <Button className="mt-3 sm:mt-0 sm:ml-5" color="primary" href={downloadURLMacOSX64}>
               <div className="flex items-center">
                 <SVGApple className="h-5 w-5" />
                 <p className="ml-2">Download for macOS (Intel Chip)</p>

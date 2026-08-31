@@ -30,12 +30,12 @@ export default function CTAButton({ children, href = null, target = null, ...pro
       transition={{ type: "spring", bounce: 0.6 }}
       onClick={handleHrefClick}
       {...props}
-      className={`${props.className} btn-cta group relative overflow-hidden rounded-full bg-gradient-to-t from-primary-600 to-primary-500 px-7 py-3.5`}>
+      className={`${props.className} btn-cta group from-primary-600 to-primary-500 relative overflow-hidden rounded-full bg-linear-to-t px-7 py-3.5`}>
       <div className="flex items-center justify-center">
         <p className="font-bold text-white">{children}</p>
         <SVGArrowRight className="ml-2 w-6 text-white transition-[transform] duration-300 group-hover:translate-x-2" />
       </div>
-      <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
+      <div className="absolute inset-0 flex h-full w-full transform-[skew(-12deg)_translateX(-100%)] justify-center group-hover:transform-[skew(-12deg)_translateX(100%)] group-hover:duration-1000">
         <div className="relative h-full w-8 bg-white/20"></div>
       </div>
     </motion.button>
